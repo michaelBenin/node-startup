@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "0.10"
+rvm:
+  - 2.0.0
+gemfile:
+  - gemfiles/compass
+  - gemfiles/sass-globbing
+before_script:
+  - "npm install"
+script: "npm test"

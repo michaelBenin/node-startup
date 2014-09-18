@@ -1,0 +1,135 @@
+//selector {
+//  prop: value   /* real browsers
+//  _prop: value   /* ie6
+//  *prop: value   /* ie6 ie7
+//  prop: value\9  /* ie8 ie9
+//}
+
+//       background: transparent #{inline_image('search_header.png')} no-repeat center right 10px
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  @include box-shadow(0px 1px 3px 0px #828282);
+  background: white;
+  @include rem(height, 80px);
+  @include rem(padding, 22px 10px 0 10px);
+  @media #{$desktop} {
+    background: white;
+  }
+  @media #{$tablet} {}
+  @media #{$mobile} {}
+  i {
+    color: $red;
+  }
+  h1 {
+    color: $purple;
+    cursor: pointer;
+    @include rem(font-size, 30px);
+    font-style: italic;
+    span {
+      color: $red;
+    }
+    @media #{$tablet} {
+      @include rem(font-size, 20px);
+      @include rem(margin-top, 11px);
+    }
+  }
+  ul {
+    @media #{$tablet} {
+      text-align: center;
+      @include css-animation;
+      @include rem(height, 50px);
+      overflow: hidden;
+      @include rem(margin-top, -10px);
+      &.open {
+        @include rem(height, 350px);
+      }
+    }
+
+    @media #{$mobile} {
+      text-align: center;
+      @include css-animation;
+      @include rem(height, 50px);
+      overflow: hidden;
+      @include rem(margin-top, -10px);
+      &.open {
+        @include rem(height, 350px);
+      }
+    }
+  }
+  li {
+    float: left;
+    @include rem(padding, 10px 15px 15px 15px);
+    border-right: 1px solid #cccccc;
+    &.last {
+      border-right: none;
+    }
+    &.tablet-mobile {
+      display: none;
+    }
+    @media #{$tablet} {
+      text-align: center;
+      @include rem(width, 13rem);
+      margin: 0 auto;
+      @include rem(margin-top, 10px);
+      @include rem(font-size, 20px);
+      float: none;
+      border: none;
+      &.tablet-mobile {
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        @include rem(width, 8rem);
+        @include rem(font-size, 40px);
+        &:active {
+          color: $green;
+        }
+      }
+    }
+    @media #{$mobile} {
+
+    }
+  }
+  a {
+    color: $purple;
+  }
+  form {
+    input {
+      @include css-animation;
+      float: right;
+      color: $purple;
+      border: 1px lightgray solid;
+      @include border-radius(5px);
+      cursor: pointer;
+      font-family: $form_font;
+      @include rem(font-size, 14px);
+      @include rem(padding, 10px 35px 10px 10px);
+      width: 100%;
+      &::-webkit-input-placeholder {
+        color: $purple;
+      }
+      &::-moz-placeholder {
+        color: $purple;
+      }
+      &:-moz-placeholder {
+        color: $purple;
+      }
+      &:-ms-input-placeholder {
+        color: $purple;
+      }
+    }
+    input:focus {
+      width: 150%;
+    }
+    i {
+      float: right;
+      color: $red;
+      position: relative;
+      @include rem(top, -30px);
+      @include rem(left, -15px);
+    }
+  }
+}

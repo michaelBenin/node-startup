@@ -1,0 +1,30 @@
+$legacy-support-for-ie: true;
+
+// Colors
+$black: black;
+$purple: #9636a4;
+$red: #f15837;
+$green: #89da1b;
+$blue: #75b8e3;
+
+$body_font: "Helvetica Neue", sans-serif;
+$form_font: "Helvetica Neue", sans-serif;
+$order_button_font: "Helvetica Neue", sans-serif;
+
+/* Small screen, non-retina */
+$mobile: "only screen and (min-width : 320px) and (max-width : 767px)";
+
+/* Small screen, retina, stuff to override above media query */
+$mobile_retina: "only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width : 320px) and (max-width : 767px), only screen and (min--moz-device-pixel-ratio: 2) and (min-width : 320px) and (max-width : 767px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width : 320px) and (max-width : 767px), only screen and (min-device-pixel-ratio: 2) and (min-width : 320px) and (max-width : 767px), only screen and (min-resolution: 192dpi) and (min-width : 320px) and (max-width : 767px), only screen and (min-resolution: 2dppx) and (min-width: 320px)";
+
+/* Medium screen, non-retina */
+$tablet: "only screen and (min-width : 768px) and (max-width : 1024px)";
+
+/* Medium screen, retina, stuff to override above media query */
+$tablet_retina: "only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width : 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 768px) and (max-width : 1024px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 768px) and (max-width : 1024px), only screen and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width : 1024px), only screen and (min-resolution: 192dpi) and (min-width: 768px) and (max-width : 1024px), only screen and (min-resolution: 2dppx) and (min-width: 768px) and (max-width : 1024px)";
+
+/* Large screen non-retina */
+$desktop: "only screen and (min-width: 1025px)";
+
+/* Large screen, retina, stuff to override above media query */
+$desktop_retina: "only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1025px), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 980px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 980px), only screen and (min-device-pixel-ratio: 2) and (min-width: 980px), only screen and (min-resolution: 192dpi) and (min-width: 980px), only screen and (min-resolution: 2dppx) and (min-width: 980px)";

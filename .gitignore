@@ -1,0 +1,15 @@
+.idea
+.DS_Store
+.rebooted
+built
+client_modules
+node_modules
+.sass-cache
+credentials.js
+.nodemonignore
+*.log
+*.pid
+*.pem
+server/views/partials/scripts.hbs
+server/views/partials/test/test-scripts.hbs
+env
