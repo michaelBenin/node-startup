@@ -13,8 +13,10 @@ module.exports = {
         // Apply new or different defaults on top of the original
         if (protoProps.defaults) {
           for (var k in this.prototype.defaults) {
-            if (!extended.prototype.defaults[k]) {
-              extended.prototype.defaults[k] = this.prototype.defaults[k];
+            if (this.prototype.defaults.hasOwnProperty(k)) {
+              if (!extended.prototype.defaults[k]) {
+                extended.prototype.defaults[k] = this.prototype.defaults[k];
+              }
             }
           }
         }

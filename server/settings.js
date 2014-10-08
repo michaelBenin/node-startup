@@ -36,11 +36,11 @@ var settings = {
     PRISMIC: {
       // -- API endpoint
       apiEndpoint: 'https://d2367rbupm857a.cloudfront.net/api'
-      // -- Access token if the Master is not open
-      // accessToken: 'xxxxxx',
-      // -- OAuth
-      // clientId: 'xxxxxx',
-      // clientSecret: 'xxxxxx'
+        // -- Access token if the Master is not open
+        // accessToken: 'xxxxxx',
+        // -- OAuth
+        // clientId: 'xxxxxx',
+        // clientSecret: 'xxxxxx'
     }
   },
 
