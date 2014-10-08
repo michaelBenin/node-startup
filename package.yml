@@ -90,6 +90,7 @@
     #keystone: "^0.2.4"
   devDependencies:
     compass-mixins: "0.12.3"
+    node-sass: "0.9.3"
     husky: "0.6.0"
     jit-grunt: "0.7.0"
     grunt-cli: "^0.1.13"
