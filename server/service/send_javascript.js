@@ -32,7 +32,7 @@ app.get('/js', function (req, res, next) {
     res.type('js');
     return res.send(bundle);
   }).catch(function (error) {
-    res.send('alert("error in bundle "' + error.message + '")');
+    res.send('alert("error in bundle ' + error.message + '");');
   });
 });
 

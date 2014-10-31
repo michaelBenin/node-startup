@@ -1,6 +1,6 @@
 'use strict';
 
-var Base = require('./link_base');
+var Base = require('./../../../shared/models/link/link_base');
 
 var Links = Base.fullExtend({
   urlRoot: '/api/link'

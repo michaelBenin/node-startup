@@ -1,7 +1,7 @@
 'use strict';
 
-var Base = require('./links_base');
-var Link = require('../link/link_client');
+var Base = require('./../../../shared/models/links/links_base');
+var Link = require('./link_model');
 
 var Links = Base.fullExtend({
   model: Link,

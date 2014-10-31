@@ -14,7 +14,7 @@ var collectionViewOn = stateManager.collectionViewOn;
 var collectionViewOff = stateManager.collectionViewOff;
 
 var subView = require('./home_sub_view');
-var LinksCollection = require('../../shared/models/links/links_client');
+var LinksCollection = require('../../client/js/models/links_collection');
 var View = Backbone.View.extend({
 
   bootstrapData: function () {

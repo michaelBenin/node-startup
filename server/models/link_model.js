@@ -2,7 +2,7 @@
 
 var _ = require('underscore');
 var Base = require('./article_base');
-var SETTINGS = require('../../../server/settings');
+var SETTINGS = require('../settings');
 
 var Link = Base.fullExtend({
   urlRoot: 'mongodb://Michael-Benins-MacBook-Air.local:27017/articles'
