@@ -15,8 +15,16 @@ var stateManager = _.extend({},
     'currentViews': [],
     'initialPageLoad': true,
     'pushStateSupport': (window.history && window.history.pushState),
-    'rootURL': window.location.protocol + '//' + document.location.host + '/',
-    'url': document.location.toString().split(window.location.protocol + '//' + document.location.host + '/'),
+
+    'rootURL': window.location.protocol +
+      '//' +
+      document.location.host +
+      '/',
+
+    'url': document.location.toString().split(window.location.protocol +
+      '//' +
+      document.location.host +
+      '/'),
 
     initPageLoad: function () {
       this.initialPageLoad = false;
@@ -78,21 +86,21 @@ var stateManager = _.extend({},
 
     },
 
-    stateManage: function (view_event_list) {
+    stateManage: function (viewEventList) {
       var self = this;
 
       if (!this.initialPageLoad) {
 
-        var off_views = _.difference(this.currentViews, view_event_list);
+        var offViews = _.difference(this.currentViews, viewEventList);
 
-        var render_views = _.difference(view_event_list, this.currentViews);
+        var renderViews = _.difference(viewEventList, this.currentViews);
 
-        _.each(off_views, function (view) {
+        _.each(offViews, function (view) {
           view.off();
           self.removeView(view);
         });
 
-        _.each(render_views, function (view) {
+        _.each(renderViews, function (view) {
           view.render();
           self.addView(view);
         });
@@ -101,7 +109,7 @@ var stateManager = _.extend({},
 
       }
 
-      _.each(view_event_list, function (view) {
+      _.each(viewEventList, function (view) {
 
         self.addView(view);
 

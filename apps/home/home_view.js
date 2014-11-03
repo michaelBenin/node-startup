@@ -34,20 +34,20 @@ var View = Backbone.View.extend({
   off: function () {
     collectionViewOff(this.subviews);
     this.subviews = undefined;
-    this.undelegateEvents(this.adaptive_events[this.current_device]);
+    this.undelegateEvents(this.adaptive_events[this.currentDevice]);
   },
 
   on: function () {
     var base = this.adaptive_events.base;
     var device = this.adaptive_events[stateManager.getDevice()];
     //TODO Conditional delegate events with enquire for phone, tablet, desktop
-    this.current_device = stateManager.getDevice();
+    this.currentDevice = stateManager.getDevice();
     this.delegateEvents(_.extend({}, base, device));
     this.onCollections();
     return this;
   },
 
-  current_device: null,
+  currentDevice: null,
 
   adaptive_events: {
 
