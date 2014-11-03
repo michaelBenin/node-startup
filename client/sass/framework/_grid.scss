@@ -1,20 +1,20 @@
-/* http://viget.com/inspire/building-a-nested-responsive-grid-with-sass-compass */
-/* Sass::Script::Number.precision = 10 */
+// http://viget.com/inspire/building-a-nested-responsive-grid-with-sass-compass 
+// Sass::Script::Number.precision = 10 
 
 $cols: 12;
 $gutter: 2%;
 
-$one_col: (100% - $gutter * ($cols - 1)) / $cols;
+$one-col: (100% - $gutter * ($cols - 1)) / $cols;
 
 @mixin cols($num) {
-  width: $one_col * $num + $gutter * ($num - 1);
+  width: $one-col * $num + $gutter * ($num - 1);
 }
 
-@mixin sub_cols($num_child, $num_parent) {
-  $parent_size: $one_col * $num_parent + $gutter * ($num_parent - 1);
-  $child_size: $one_col * $num_child + $gutter * ($num_child - 1);
-  margin-left: $gutter / $parent_size * 100%;
-  width: $child_size / $parent_size * 100%;
+@mixin sub-cols($num-child, $num-parent) {
+  $parent-size: $one-col * $num-parent + $gutter * ($num-parent - 1);
+  $child-size: $one-col * $num-child + $gutter * ($num-child - 1);
+  margin-left: $gutter / $parent-size * 100%;
+  width: $child-size / $parent-size * 100%;
 }
 
 .row {
@@ -26,7 +26,7 @@ $one_col: (100% - $gutter * ($cols - 1)) / $cols;
       @include cols($i);
       @for $j from 1 through $i - 1 {
         .span#{$j} {
-          @include sub_cols($j, $i);
+          @include sub-cols($j, $i);
         }
       }
     }

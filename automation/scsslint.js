@@ -7,8 +7,7 @@ module.exports = {
       'client/sass/*/**.scss'
     ],
     options: {
-      emitError: true,
-      force: true
+      config: 'node_modules/grunt-scss-lint/.scss-lint.yml'
     }
   }
 };

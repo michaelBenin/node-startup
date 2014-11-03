@@ -1,14 +1,16 @@
 section.footer {
-  width: 100%;
-  background: white;
+  background: #fff;
+  border-top: 1px solid #ccc;
   height: 40px;
+  margin: 10px 0 0;
   padding: 10px;
-  margin: 10px 0 0 0 0;
-  border-top: 1px solid #cccccc;
+  width: 100%;
+
   h1 {
     float: left;
     font-size: 15px;
     font-style: italic;
+
     span {
       color: $purple;
     }

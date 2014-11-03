@@ -8,35 +8,43 @@
 //       background: transparent #{inline_image('search_header.png')} no-repeat center right 10px
 
 .header {
+  background: #fff;
+  left: 0;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  @include box-shadow(0px 1px 3px 0px #828282);
-  background: white;
+  @include box-shadow(0 1px 3px 0 #828282);
   @include rem(height, 80px);
   @include rem(padding, 22px 10px 0 10px);
+
   @media #{$desktop} {
-    background: white;
+    background: #fff;
   }
+
   @media #{$tablet} {}
+
   @media #{$mobile} {}
+
   i {
     color: $red;
   }
+
   h1 {
     color: $purple;
     cursor: pointer;
     @include rem(font-size, 30px);
     font-style: italic;
+
     span {
       color: $red;
     }
+
     @media #{$tablet} {
       @include rem(font-size, 20px);
       @include rem(margin-top, 11px);
     }
   }
+
   ul {
     @media #{$tablet} {
       text-align: center;
@@ -44,6 +52,7 @@
       @include rem(height, 50px);
       overflow: hidden;
       @include rem(margin-top, -10px);
+
       &.open {
         @include rem(height, 350px);
       }
@@ -55,21 +64,26 @@
       @include rem(height, 50px);
       overflow: hidden;
       @include rem(margin-top, -10px);
+
       &.open {
         @include rem(height, 350px);
       }
     }
   }
+
   li {
+    border-right: 1px solid #ccc;
     float: left;
     @include rem(padding, 10px 15px 15px 15px);
-    border-right: 1px solid #cccccc;
+
     &.last {
-      border-right: none;
+      border-right: 0;
     }
+
     &.tablet-mobile {
       display: none;
     }
+
     @media #{$tablet} {
       text-align: center;
       @include rem(width, 13rem);
@@ -77,56 +91,67 @@
       @include rem(margin-top, 10px);
       @include rem(font-size, 20px);
       float: none;
-      border: none;
+      border: 0;
+
       &.tablet-mobile {
         cursor: pointer;
         display: block;
         margin: 0 auto;
         @include rem(width, 8rem);
         @include rem(font-size, 40px);
+
         &:active {
           color: $green;
         }
       }
     }
+
     @media #{$mobile} {
 
     }
   }
+
   a {
     color: $purple;
   }
+
   form {
     input {
-      @include css-animation;
-      float: right;
+      border: 1px #d3d3d3 solid;
       color: $purple;
-      border: 1px lightgray solid;
-      @include border-radius(5px);
       cursor: pointer;
-      font-family: $form_font;
+      float: right;
+      font-family: $form-font;
+      width: 100%;
+      @include css-animation;
+      @include border-radius(5px);
       @include rem(font-size, 14px);
       @include rem(padding, 10px 35px 10px 10px);
-      width: 100%;
+
       &::-webkit-input-placeholder {
         color: $purple;
       }
+
       &::-moz-placeholder {
         color: $purple;
       }
+
       &:-moz-placeholder {
         color: $purple;
       }
+
       &:-ms-input-placeholder {
         color: $purple;
       }
     }
+
     input:focus {
       width: 150%;
     }
+
     i {
-      float: right;
       color: $red;
+      float: right;
       position: relative;
       @include rem(top, -30px);
       @include rem(left, -15px);

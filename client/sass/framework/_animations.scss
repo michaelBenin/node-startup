@@ -1,15 +1,16 @@
-//Animate Mixin Plugin
+// Animate Mixin Plugin
 
-@mixin animate($name: fadeIn, $duration: 1s, $delay: 0.2s, $function: ease, $mode: both) {
+@mixin animate($name: fadeIn, $duration: 1s, $delay: .2s, $function: ease, $mode: both) {
   @include experimental(animation, $name $duration $delay $function $mode);
 }
 
-//KeyFrame Defaults (pre-made don't edit)
+// KeyFrame Defaults (pre-made don't edit)
 
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -20,6 +21,7 @@
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -31,6 +33,7 @@
     opacity: 0;
     -webkit-transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -43,6 +46,7 @@
     opacity: 1;
     -webkit-transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     -webkit-transform: translateY(-20px);
@@ -55,6 +59,7 @@
     opacity: 0;
     -webkit-transform: translateY(-20px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -67,6 +72,7 @@
     opacity: 1;
     -webkit-transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     -webkit-transform: translateY(20px);
@@ -79,6 +85,7 @@
     opacity: 0;
     -webkit-transform: translateX(20px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -91,6 +98,7 @@
     opacity: 1;
     -webkit-transform: translateX(0);
   }
+
   100% {
     opacity: 0;
     -webkit-transform: translateX(-20px);
@@ -103,6 +111,7 @@
     opacity: 0;
     -webkit-transform: translateX(-20px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -115,6 +124,7 @@
     opacity: 1;
     -webkit-transform: translateX(0);
   }
+
   100% {
     opacity: 0;
     -webkit-transform: translateX(20px);
@@ -127,6 +137,7 @@
     opacity: 0;
     -webkit-transform: translateY(2000px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -139,6 +150,7 @@
     opacity: 1;
     -webkit-transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     -webkit-transform: translateY(-2000px);
@@ -151,6 +163,7 @@
     opacity: 0;
     -webkit-transform: translateY(-2000px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -163,6 +176,7 @@
     opacity: 1;
     -webkit-transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     -webkit-transform: translateY(2000px);
@@ -175,6 +189,7 @@
     opacity: 0;
     -webkit-transform: translateX(2000px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -187,6 +202,7 @@
     opacity: 1;
     -webkit-transform: translateX(0);
   }
+
   100% {
     opacity: 0;
     -webkit-transform: translateX(-2000px);
@@ -199,6 +215,7 @@
     opacity: 0;
     -webkit-transform: translateX(-2000px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -211,6 +228,7 @@
     opacity: 1;
     -webkit-transform: translateX(0);
   }
+
   100% {
     opacity: 0;
     -webkit-transform: translateX(2000px);
@@ -221,15 +239,18 @@
 @-webkit-keyframes bounceIn {
   0% {
     opacity: 0;
-    -webkit-transform: scale(0.3);
+    -webkit-transform: scale(.3);
   }
+
   50% {
     opacity: 1;
     -webkit-transform: scale(1.05);
   }
+
   70% {
-    -webkit-transform: scale(0.9);
+    -webkit-transform: scale(.9);
   }
+
   100% {
     -webkit-transform: scale(1);
   }
@@ -241,13 +262,16 @@
     opacity: 0;
     -webkit-transform: translateY(-2000px);
   }
+
   60% {
     opacity: 1;
     -webkit-transform: translateY(30px);
   }
+
   80% {
     -webkit-transform: translateY(-10px);
   }
+
   100% {
     -webkit-transform: translateY(0);
   }
@@ -259,13 +283,16 @@
     opacity: 0;
     -webkit-transform: translateY(2000px);
   }
+
   60% {
     opacity: 1;
     -webkit-transform: translateY(-30px);
   }
+
   80% {
     -webkit-transform: translateY(10px);
   }
+
   100% {
     -webkit-transform: translateY(0);
   }
@@ -277,13 +304,16 @@
     opacity: 0;
     -webkit-transform: translateX(2000px);
   }
+
   60% {
     opacity: 1;
     -webkit-transform: translateX(-30px);
   }
+
   80% {
     -webkit-transform: translateX(10px);
   }
+
   100% {
     -webkit-transform: translateX(0);
   }
@@ -295,13 +325,16 @@
     opacity: 0;
     -webkit-transform: translateX(-2000px);
   }
+
   60% {
     opacity: 1;
     -webkit-transform: translateX(30px);
   }
+
   80% {
     -webkit-transform: translateX(-10px);
   }
+  
   100% {
     -webkit-transform: translate;
   }

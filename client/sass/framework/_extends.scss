@@ -1,13 +1,16 @@
 %clearfix {
-  &:before, &:after {
-    content: ".";
+
+  &:before,
+  &:after {
+    content: '.';
     display: block;
-    overflow: hidden;
     font-size: 0;
-    line-height: 0;
-    width: 0;
     height: 0;
+    line-height: 0;
+    overflow: hidden;
+    width: 0;
   }
+
   &:after {
     clear: both;
   }

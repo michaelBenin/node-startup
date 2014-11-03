@@ -1,32 +1,32 @@
-/* http://code-tricks.com/css-media-queries-for-common-devices/ */
-/* http://dev.theladders.com/2013/10/responsive-design-keeping-our-thick-client-skinny/ */
+// http://code-tricks.com/css-media-queries-for-common-devices/ 
+// http://dev.theladders.com/2013/10/responsive-design-keeping-our-thick-client-skinny/ 
 
-/* Small screen, non-retina */
+// Small screen, non-retina 
 @mixin mobile {
   @media only screen and (min-width: 320px) and (max-width: 767px) {}
 }
 
-/* Small screen, retina, stuff to override above media query */
+// Small screen, retina, stuff to override above media query 
 @mixin mobile-retina {
   @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px) and (max-width: 767px), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 320px) and (max-width: 767px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 320px) and (max-width: 767px), only screen and (min-device-pixel-ratio: 2) and (min-width: 320px) and (max-width: 767px), only screen and (min-resolution: 192dpi) and (min-width: 320px) and (max-width: 767px), only screen and (min-resolution: 2dppx) and (min-width: 320px) {}
 }
 
-/* Medium screen, non-retina */
+// Medium screen, non-retina 
 @mixin tablet {
   @media only screen and (min-width: 768px) and (max-width: 1024px) {}
 }
 
-/* Medium screen, retina, stuff to override above media query */
+// Medium screen, retina, stuff to override above media query 
 @mixin tablet-retina {
   @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 768px) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1024px) {}
 }
 
-/* Large screen non-retina */
+// Large screen non-retina 
 @mixin desktop {
   @media only screen and (min-width: 1025px) {}
 }
 
-/* Large screen, retina, stuff to override above media query */
+// Large screen, retina, stuff to override above media query 
 @mixin desktop-retina {
   @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1025px), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 980px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 980px), only screen and (min-device-pixel-ratio: 2) and (min-width: 980px), only screen and (min-resolution: 192dpi) and (min-width: 980px), only screen and (min-resolution: 2dppx) and (min-width: 980px) {}
 }
