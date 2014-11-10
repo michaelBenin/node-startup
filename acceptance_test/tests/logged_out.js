@@ -11,7 +11,7 @@ describe('Logged out tests.', function () {
       browser
         .url('http://' + config.base_url)
         .getTitle(function (err, title) {
-          expect(title).to.equal('Linkway Live');
+          expect(title).to.equal('node-startup');
         })
         .end(done);
     });
