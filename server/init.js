@@ -22,6 +22,7 @@ var path = require('path');
 // var jwt = require('express-jwt');
 var clientConfig = _.pick(
   SETTINGS,
+  'MOBILE_APP',
   'OFFLINE_URL',
   'DEBUG',
   'STATIC_URL'

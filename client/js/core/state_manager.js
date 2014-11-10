@@ -198,6 +198,10 @@ var stateManager = _.extend({},
         var config = _.extend({}, config, $.parseJSON($config.html()));
         $config.remove();
         self.config = config;
+        // Force rendering instead of event binding
+        if (self.config.MOBILE_APP) {
+          this.initPageLoad();
+        }
       });
     },
 

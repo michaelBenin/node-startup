@@ -7,6 +7,7 @@ var settings = {
 
   BASE: {
     DEBUG: (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'local'),
+    MOBILE_APP: false,
     WEBSOCKET_PORT: 3000,
     PORT: 8000,
     HOSTNAME: '127.0.0.1',
