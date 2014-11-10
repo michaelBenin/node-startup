@@ -32,7 +32,7 @@ module.exports = {
           'hbsfy'
         ],
         postBundleCB: function (err, src, next) {
-          var promiseScript = require('../server/service/send_javascript');
+          var promiseScript = require('./util/send_javascript');
           promiseScript.reset();
           var resolveBundle = promiseScript.resolveBundle;
           var rejectBundle = promiseScript.rejectBundle;
@@ -70,7 +70,7 @@ module.exports = {
           'hbsfy'
         ],
         postBundleCB: function (err, src, next) {
-          var promiseScript = require('../server/service/send_test_javascript');
+          var promiseScript = require('./util/send_test_javascript');
           promiseScript.reset();
           var resolveBundle = promiseScript.resolveBundle;
           var rejectBundle = promiseScript.rejectBundle;
