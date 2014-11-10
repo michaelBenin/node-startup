@@ -1,6 +1,5 @@
 'use strict';
 
-var http = require('http');
 var express = require('express');
 var app = express();
 var compression = require('compression')();
@@ -36,6 +35,6 @@ app.get('/js', function (req, res, next) {
   });
 });
 
-var server = http.createServer(app).listen(1112);
+var server = app.listen(1112);
 
 module.exports = setupScript;
