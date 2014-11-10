@@ -180,8 +180,18 @@ var stateManager = _.extend({},
         }, 100);
       }
       // Todo separate out into analytics util/service
-      window._gaq = window._gaq || [];
-      window._gaq.push(['_trackEvent', 'STATE_MANAGER', 'HTML5_HISTORY_SUPPORT', this.pushStateSupport]);
+      var ga = window.ga;
+      ga = ga || function () {
+        (ga.q = ga.q || []).push(arguments);
+      };
+      ga.l = new Date();
+      ga(
+        'send',
+        'event',
+        'STATE_MANAGER',
+        'HTML5_HISTORY_SUPPORT',
+        this.pushStateSupport
+      );
       return this;
     },
 
