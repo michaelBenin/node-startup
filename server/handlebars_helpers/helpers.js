@@ -4,7 +4,7 @@ var Handlebars = require('handlebars');
 var _ = require('underscore');
 
 module.exports = function (hbs) {
-  var helpersConfig = require('./helpers_config')(hbs);
+  var helpersConfig = require('./../../shared/handlebars_helpers/helpers_config')(hbs);
 
   for (var helper in helpersConfig) {
     if (helpersConfig.hasOwnProperty(helper)) {

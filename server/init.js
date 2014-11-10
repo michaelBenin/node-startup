@@ -29,7 +29,7 @@ var clientConfig = _.pick(
 
 var Backbone = require('backbone');
 require('../shared/utils/util').backbone(Backbone);
-require('../shared/handlebars_helpers/server_helpers')(hbs);
+require('./handlebars_helpers/helpers')(hbs);
 require('./lib/hbs-config')(hbs, SETTINGS.PARTIALS);
 
 app.use(compression);

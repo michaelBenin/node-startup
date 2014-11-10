@@ -16,7 +16,7 @@ require('backbone-relational');
 require('backbone.epoxy');
 
 var Handlebars = require('hbsfy/runtime');
-require('../../shared/handlebars_helpers/client_helpers')(Handlebars);
+require('./handlebars_helpers/helpers')(Handlebars);
 
 var router = require('./router/router');
 require('./router/router_handler')(router);
