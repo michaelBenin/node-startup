@@ -29,6 +29,7 @@ var clientConfig = _.pick(
 );
 
 var Backbone = require('backbone');
+require('./service/sync_server');
 require('../shared/utils/util').backbone(Backbone);
 require('./handlebars_helpers/helpers')(hbs);
 require('./lib/hbs-config')(hbs, SETTINGS.PARTIALS);

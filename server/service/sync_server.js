@@ -5,6 +5,7 @@
 var Backbone = require('backbone');
 var Promise = require('bluebird');
 var request = Promise.promisify(require('request'));
+var _ = require('underscore');
 
 Backbone.sync = function (method, model, options) {
 
@@ -44,10 +45,16 @@ Backbone.sync = function (method, model, options) {
     },
 
     read: function (model, options) {
-      return request({
+      var requestOptions = {
         url: model.urlRoot,
         type: 'GET'
-      });
+      };
+
+      if (model.requestHeaders) {
+        requestOptions.headers = model.requestHeaders;
+      }
+
+      return request(requestOptions);
     }
   };
 

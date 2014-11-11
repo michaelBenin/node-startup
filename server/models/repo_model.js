@@ -3,14 +3,13 @@
 'use strict';
 
 var _ = require('underscore');
-var Base = require('./article_base');
+var Base = require('../../shared/models/repo/repo_base');
 var SETTINGS = require('../settings');
 
-var Link = Base.fullExtend({
-  urlRoot: 'mongodb://Michael-Benins-MacBook-Air.local:27017/articles'
-    //urlRoot: SETTINGS.DB + '://' + SETTINGS.DB_IP + ':' + SETTINGS.DB_PORT + '/articles'
+var RepoModel = Base.fullExtend({
+  requestHeaders: {
+    'User-Agent': 'node-startup'
+  }
 });
 
-//Article.prototype.sync = BackboneMONGO.sync(Article);
-
-module.exports = Link;
+module.exports = RepoModel;

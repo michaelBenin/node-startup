@@ -1,12 +1,16 @@
 <section class="row topics">
-  <section class="span5">
-    <h1>Topics</h1>
-    <p>
-      This is the topics page. Basically we would want popular
-      topics and what not.
-    </p>
-  </section>
-  <section class="span7">
-    Stuff
-  </section>
+    <article>
+        <section class="span8">
+            <h1>{{ name }}</h1>
+            <p>
+                {{ description }}
+            </p>
+        </section>
+        <section class="span4">
+            <h1> {{ owner.login }} </h1>
+            <p>
+                <img src="{{ owner.avatar_url }}" title={{ owner.login }} />
+            </p>
+        </section>
+    </article>
 </section>

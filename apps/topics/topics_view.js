@@ -6,7 +6,8 @@ var _ = require('underscore');
 var stateManager = require('../../client/js/core/state_manager');
 var template = require('./topics.hbs');
 var config = require('../../client/js/config');
-
+var RepoModel = require('../../client/js/models/repo_model');
+var Repo = new RepoModel();
 var View = Backbone.View.extend({
 
   initialize: function () {
@@ -57,13 +58,25 @@ var View = Backbone.View.extend({
   },
 
   render: function () {
-    this
-      .on()
-      .$el
-      .empty()
-      .hide()
-      .append(template(config))
-      .fadeIn();
+    var self = this;
+    Repo.fetch().then(function (data) {
+      var context = _.extend({}, config, data);
+      self
+        .on()
+        .$el
+        .empty()
+        .hide()
+        .append(template(context))
+        .fadeIn();
+    }).catch(function () {
+      self
+        .on()
+        .$el
+        .empty()
+        .hide()
+        .append(template(config))
+        .fadeIn();
+    });
 
     Backbone.history.navigate('topics');
   },

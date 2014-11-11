@@ -1,5 +1,9 @@
 'use strict';
 
+var RepoModel = require('./../models/repo_model');
+var Repo = new RepoModel();
+var _ = require('underscore');
+
 module.exports = function (app) {
 
   return {
@@ -35,8 +39,16 @@ module.exports = function (app) {
     },
 
     'topics': function (req, res, next) {
-      return res.render('pages/topics', {
-        layout: 'layouts/layout'
+      Repo.fetch().then(function (data) {
+        data = JSON.parse(data[1]);
+        var context = _.extend({}, data, {
+          layout: 'layouts/layout'
+        });
+        res.render('pages/topics', context);
+      }).catch(function (e) {
+        res.render('pages/topics', {
+          layout: 'layouts/layout'
+        });
       });
     },
 
