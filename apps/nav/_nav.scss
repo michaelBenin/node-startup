@@ -13,6 +13,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
   @include box-shadow(0 1px 3px 0 #828282);
   @include rem(height, 80px);
   @include rem(padding, 22px 10px 0 10px);
