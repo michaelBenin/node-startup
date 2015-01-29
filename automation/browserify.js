@@ -3,36 +3,48 @@
 var fs = require('fs');
 var start = false;
 
+var exposify = require('exposify');
+
+// Add globals here
+exposify.config = {
+  Modernizr: 'modernizr'
+};
+
 module.exports = {
 
   browserify: {
+
     modern: {
-      src: ['client/js/init.js'],
+      src: ['browser/js/app.js'],
       dest: 'built/static/js/node-startup.js',
       options: {
-        bundleOptions: {
+        browserifyOptions: {
           debug: true
         },
         transform: [
-          'hbsfy'
+          'hbsfy',
+          'exposify',
+          'brfs'
         ]
       }
     },
 
     modern_dev: {
-      src: ['client/js/init.js'],
+      src: ['browser/js/app.js'],
       dest: 'built/static/js/node-startup.js',
       options: {
-        bundleOptions: {
+        browserifyOptions: {
           debug: true
         },
         keepAlive: true,
         watch: true,
         transform: [
-          'hbsfy'
+          'hbsfy',
+          'exposify',
+          'brfs'
         ],
         postBundleCB: function (err, src, next) {
-          var promiseScript = require('./util/send_javascript');
+          var promiseScript = require('./utils/send_javascript');
           promiseScript.reset();
           var resolveBundle = promiseScript.resolveBundle;
           var rejectBundle = promiseScript.rejectBundle;
@@ -43,8 +55,8 @@ module.exports = {
           }
 
           resolveBundle(src);
-
-          fs.writeFileSync('../.rebooted', 'rebooted: ' + new Date());
+          console.log('testing');
+          fs.writeFileSync('./.rebooted', 'rebooted: ' + new Date());
 
           if (!start) {
             require('open')('http://127.0.0.1:8000');
@@ -56,21 +68,23 @@ module.exports = {
 
     watch_unit_test: {
       src: [
-        'client/js/init.js',
-        'client/js/test/init.js'
+        'browser/js/app.js',
+        'test/browser/unit/init.js'
       ],
       dest: 'built/test/test-node-startup.js',
       options: {
-        bundleOptions: {
+        browserifyOptions: {
           debug: true
         },
         keepAlive: true,
         watch: true,
         transform: [
-          'hbsfy'
+          'hbsfy',
+          'exposify',
+          'brfs'
         ],
         postBundleCB: function (err, src, next) {
-          var promiseScript = require('./util/send_test_javascript');
+          var promiseScript = require('./utils/send_test_javascript');
           promiseScript.reset();
           var resolveBundle = promiseScript.resolveBundle;
           var rejectBundle = promiseScript.rejectBundle;
@@ -82,7 +96,7 @@ module.exports = {
 
           resolveBundle(src);
 
-          fs.writeFileSync('../.rebooted', 'rebooted: ' + new Date());
+          fs.writeFileSync('./.rebooted', 'rebooted: ' + new Date());
 
           if (!start) {
             require('open')('http://127.0.0.1:8000/test');
@@ -94,8 +108,8 @@ module.exports = {
 
     test: {
       src: [
-        'client/js/init.js',
-        'client/js/test/init.js'
+        'browser/js/app.js',
+        'test/browser/init.js'
       ],
       dest: 'built/test/test-node-startup.js',
       options: '<%= browserify.modern.options %>'

@@ -7,7 +7,7 @@ var config = {};
 var files = fs.readdirSync(__dirname);
 
 [
-  'util',
+  'utils',
   'index.js'
 ].forEach(function (path) {
   var index = files.indexOf(path);

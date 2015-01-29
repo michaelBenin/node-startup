@@ -2,16 +2,43 @@
 
 module.exports = {
   docco: {
-    js: {
+
+    shared: {
       src: [
-        'appa/**/*.js',
-        'client/qunit-1.11.0/*.js',
-        'server/js/lib/**/*.js'
+        'shared/**/*.js'
       ],
       options: {
-        output: 'built/docs/JavaScript'
+        output: 'built/docs/JavaScript/shared'
       }
     },
+
+    apps: {
+      src: [
+        'apps/**/*.js'
+      ],
+      options: {
+        output: 'built/docs/JavaScript/apps'
+      }
+    },
+
+    node: {
+      src: [
+        'lib/**/*.js'
+      ],
+      options: {
+        output: 'built/docs/JavaScript/node'
+      }
+    },
+
+    browser: {
+      src: [
+        'browser/**/*.js'
+      ],
+      options: {
+        output: 'built/docs/JavaScript/browser'
+      }
+    },
+
     grunt: {
       src: [
         './Gruntfile.js'

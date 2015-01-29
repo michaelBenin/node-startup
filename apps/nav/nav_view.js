@@ -3,9 +3,10 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
-var stateManager = require('../../client/js/core/state_manager');
+window._ = _;
+var stateManager = require('../../browser/js/services/state_manager');
 var template = require('./nav.hbs');
-var config = require('../../client/js/config');
+var config = require('../../browser/js/config');
 var homeView = require('../home/home_view');
 var loginView = require('../login/login_view');
 var linksView = require('../links/links_view');
@@ -51,7 +52,7 @@ var View = Backbone.View.extend({
     var base = this.adaptive_events.base;
     var device = this.adaptive_events[stateManager.getDevice()];
     this.current_device = stateManager.getDevice();
-    this.setElement($('section.header'));
+    this.setElement($('.navigation'));
     this.delegateEvents(_.extend(base, device));
   },
 
@@ -87,30 +88,7 @@ var View = Backbone.View.extend({
     },
 
     tablet: {
-      'click .tablet-mobile': function (event) {
-        var $ul = $(event.currentTarget).parent('ul');
-        var $document = $(document);
-        var hasOpen = $ul.hasClass('open');
 
-        var removeOpen = function () {
-          $ul.removeClass('open');
-          $document.off('touchstart', removeOpen);
-          $document.off('click', removeOpen);
-
-        };
-
-        if (hasOpen) {
-          $ul.removeClass('open');
-          $document.off('touchstart', removeOpen);
-          return $document.off('click', removeOpen);
-        }
-
-        if (!hasOpen) {
-          $ul.addClass('open');
-          $document.on('touchstart', removeOpen);
-          return $document.on('click', removeOpen);
-        }
-      }
     },
 
     desktop: {

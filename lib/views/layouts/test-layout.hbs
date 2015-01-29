@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Article" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+    {{> config}}
+    <link rel="stylesheet" href="{{ STATIC_URL }}/mocha.css" />
+    <script src="{{ STATIC_URL }}/mocha.js"></script>
+    <script>mocha.setup('bdd')</script>
+    {{{block "head"}}}
+</head>
+<body>
+<div id="mocha"></div>
+</body>
+{{> mocha }}
+</html>

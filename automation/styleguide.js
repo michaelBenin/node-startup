@@ -13,7 +13,7 @@ module.exports = {
         }
       },
       files: {
-        'built/docs/Styles': 'src/sass/**/*.{scss,sass}'
+        'built/docs/Styles': 'browser/scss/**/*.{scss,sass}'
       }
     }
   }

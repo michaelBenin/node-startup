@@ -7,10 +7,8 @@
 *.pem
 
 built
-client_modules
+browser_modules
 env
 node_modules
 
-server/credentials.js
-server/views/partials/scripts.hbs
-server/views/partials/test/test-scripts.hbs
+lib/credentials.js

@@ -1,0 +1,30 @@
+// Effects
+@mixin box-emboss($opacity, $opacity2) {
+  box-shadow: white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
+}
+
+@mixin letterpress($opacity) {
+  text-shadow: white($opacity) 0 1px 0;
+}
+
+@mixin seo-text {
+  overflow: hidden;
+  text-indent: -9000px;
+  display: block;
+}
+
+@mixin navigation-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+
+  > li {
+    display: block;
+    float: left;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

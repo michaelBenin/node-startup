@@ -5,7 +5,7 @@ var start = false;
 module.exports = {
   nodemon: {
     dev: {
-      script: '../server/init.js',
+      script: '../lib/app.js',
       options: {
         args: ['local'],
         nodeArgs: [
@@ -38,10 +38,14 @@ module.exports = {
           });
         },
         cwd: __dirname,
-        ignore: ['node_modules/**'],
+        ignore: [
+          'apps/**/*.js',
+          'node_modules/**'
+        ],
         ext: 'js,hbs',
         watch: [
-          '../server'
+          '../apps',
+          '../lib'
         ],
         delay: 1
       }

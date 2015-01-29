@@ -22,7 +22,7 @@ module.exports = {
 
     css: {
       files: [
-        'client/**/*.scss',
+        'browser/**/*.scss',
         'apps/**/*.scss'
       ],
       tasks: [
@@ -30,27 +30,9 @@ module.exports = {
       ]
     },
 
-    scripts: {
-      files: [
-        'server/views/partials/script_template/scripts_dev.hbs'
-      ],
-      tasks: [
-        'htmlcompressor:development'
-      ]
-    },
-
-    scripts_test: {
-      files: [
-        'server/views/partials/test/script_template/test_scripts_dev.hbs'
-      ],
-      tasks: [
-        'htmlcompressor:pre_watch_unit_test'
-      ]
-    },
-
     assets: {
       files: [
-        'client/assets/*'
+        'browser/media/*/**'
       ],
       tasks: [
         'copy'

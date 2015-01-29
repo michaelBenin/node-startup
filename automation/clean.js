@@ -7,14 +7,14 @@ module.exports = {
     ],
     all: [
       'built',
-      'client_modules',
+      'browser_modules',
       'node_modules',
-      '.sass-cache',
-      '.nodemonignore'
+      '.nodemonignore',
+      'npm-debug.log'
     ],
-    client: [
+    browser: [
       'built',
-      'client_modules'
+      'browser_modules'
     ],
     node: [
       'built',
@@ -22,9 +22,6 @@ module.exports = {
     ],
     node_modules: [
       'node_modules'
-    ],
-    scripts: [
-      'server/views/partials/scripts.hbs'
     ]
   }
 };

@@ -1,0 +1,7 @@
+{{#if debug}}
+    <script src="//localhost:35729/livereload.js" async></script>
+    <script src="//localhost:1111/js" async></script>
+{{else}}
+    <script src="{{ STATIC_URL }}/test-node-startup.js"></script>
+{{/if}}
+

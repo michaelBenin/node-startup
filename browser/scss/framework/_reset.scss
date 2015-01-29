@@ -1,0 +1,23 @@
+* {
+  @include box-sizing(border-box);
+  filter: inherit;
+}
+
+body {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  text-rendering: optimizelegibility;
+}
+
+a {
+  color: #fff;
+  outline: none;
+  text-decoration: none;
+}
+
+.placeholder {
+  color: #aaa;
+}
+
+.icon {
+  font-family: 'entypo';
+}

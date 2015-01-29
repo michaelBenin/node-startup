@@ -3,11 +3,11 @@
 module.exports = {
   express: {
     options: {
-      args: ['local']
+      args: []
     },
     dev: {
       options: {
-        script: 'server/init.js'
+        script: 'lib/app.js'
       }
     }
   }

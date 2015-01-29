@@ -3,7 +3,7 @@
 module.exports = {
   smushit: {
     path: {
-      src: 'built/static/assets/images'
+      src: 'built/static/media/images'
     }
   }
 };

@@ -56,12 +56,12 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('test', [
+    'env:jenkins',
     'scsslint',
     'jshint',
     'jsvalidate',
     'jsbeautifier:verify',
     'browserify:test',
-    'htmlcompressor:unit_test',
     'mochaTest',
     'express:dev',
     'mocha',

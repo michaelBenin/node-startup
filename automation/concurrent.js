@@ -12,7 +12,6 @@ module.exports = {
       tasks: [
         'copy',
         'sass',
-        'htmlcompressor:development',
         'env:dev'
       ]
     },
@@ -38,8 +37,7 @@ module.exports = {
     prod: [
       'copy',
       'sass',
-      'browserify:modern',
-      'htmlcompressor:production'
+      'browserify:modern'
     ]
   }
 };

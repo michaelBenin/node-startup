@@ -3,8 +3,8 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
-var stateManager = require('../../client/js/core/state_manager');
-var config = require('../../client/js/config');
+var stateManager = require('../../browser/js/services/state_manager');
+var config = require('../../browser/js/config');
 
 var template = require('./home.hbs');
 var Handlebars = require('hbsfy/runtime');
@@ -14,7 +14,7 @@ var collectionViewOn = stateManager.collectionViewOn;
 var collectionViewOff = stateManager.collectionViewOff;
 
 var subView = require('./home_sub_view');
-var LinksCollection = require('../../client/js/models/links_collection');
+var LinksCollection = require('../../browser/js/models/links_collection');
 var View = Backbone.View.extend({
 
   bootstrapData: function () {

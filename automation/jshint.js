@@ -5,12 +5,11 @@ module.exports = {
     files: [
       './*.js',
       'automation/**/*.js',
-      'client/**/*.js',
-      '!client/js/lib/*',
-      'server/**/*.js',
+      'browser/**/*.js',
+      'lib/**/*.js',
       'shared/**/*.js',
       'apps/**/*.js',
-      'acceptance_test/**/*.js'
+      'test/**/*.js'
     ],
     options: {
       reporter: require('jshint-stylish'),

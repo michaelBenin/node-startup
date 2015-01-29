@@ -7,7 +7,7 @@ module.exports = {
         reporter: 'spec'
       },
       src: [
-        'server/test/unit/init.js'
+        'test/server/unit/**/*.js'
       ]
     },
     integration: {
@@ -15,7 +15,7 @@ module.exports = {
         reporter: 'spec'
       },
       src: [
-        'server/test/integration/init.js'
+        'test/server/integration/**/*.js'
       ]
     }
   }

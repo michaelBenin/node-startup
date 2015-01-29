@@ -10,7 +10,7 @@ module.exports = {
         }
       },
       tests: [
-        'acceptance_test/init.js'
+        '../test/acceptance_test/init.js'
       ]
     },
     sauce: {
@@ -30,7 +30,7 @@ module.exports = {
         }
       },
       tests: [
-        '../acceptance_test/init.js'
+        '../test/acceptance_test/init.js'
       ]
     }
   }

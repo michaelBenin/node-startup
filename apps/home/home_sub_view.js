@@ -3,10 +3,9 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
-var stateManager = require('../../client/js/core/state_manager');
 var template = require('./home_sub.hbs');
-var config = require('../../client/js/config');
-
+var stateManager = require('../../browser/js/services/state_manager');
+var config = require('../../browser/js/config');
 var SubView = Backbone.View.extend({
 
   initialize: function () {

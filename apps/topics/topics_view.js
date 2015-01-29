@@ -3,10 +3,10 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
-var stateManager = require('../../client/js/core/state_manager');
+var stateManager = require('../../browser/js/services/state_manager');
 var template = require('./topics.hbs');
-var config = require('../../client/js/config');
-var RepoModel = require('../../client/js/models/repo_model');
+var config = require('../../browser/js/config');
+var RepoModel = require('../../browser/js/models/repo_model');
 var Repo = new RepoModel();
 var View = Backbone.View.extend({
 

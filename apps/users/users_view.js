@@ -3,9 +3,9 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
-var stateManager = require('../../client/js/core/state_manager');
+var stateManager = require('../../browser/js/services/state_manager');
 var template = require('./users.hbs');
-var config = require('../../client/js/config');
+var config = require('../../browser/js/config');
 
 var View = Backbone.View.extend({
 

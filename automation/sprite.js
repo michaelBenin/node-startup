@@ -3,9 +3,9 @@
 module.exports = {
   sprite: {
     all: {
-      src: 'client/sass/sprites/*.png',
-      destImg: 'built/static/css/spritesheet.png',
-      destCSS: 'client/sass/sprites/sprites.scss'
+      src: 'browser/scss/sprites/images/*',
+      destImg: 'built/static/media/images/spritesheet.png',
+      destCSS: 'browser/scss/sprites/_sprites.scss'
     }
   }
 };
