@@ -2,15 +2,15 @@
 
 module.exports = {
   webdriver: {
-    headless: {
+    chrome: {
       options: {
         bail: false,
         desiredCapabilities: {
-          browserName: 'phantomjs'
+          browserName: 'chrome'
         }
       },
       tests: [
-        '../test/acceptance_test/init.js'
+        'test/acceptance_test/init.js'
       ]
     },
     sauce: {
@@ -30,7 +30,7 @@ module.exports = {
         }
       },
       tests: [
-        '../test/acceptance_test/init.js'
+        'test/acceptance_test/init.js'
       ]
     }
   }

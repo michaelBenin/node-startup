@@ -3,7 +3,8 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');
-window._ = _;
+var foundation = require('foundation');
+var extendWithSuper = require('extend-with-super');
 var stateManager = require('../../browser/js/services/state_manager');
 var template = require('./nav.hbs');
 var config = require('../../browser/js/config');
@@ -52,8 +53,8 @@ var View = Backbone.View.extend({
     var base = this.adaptive_events.base;
     var device = this.adaptive_events[stateManager.getDevice()];
     this.current_device = stateManager.getDevice();
-    this.setElement($('.navigation'));
-    this.delegateEvents(_.extend(base, device));
+    this.setElement($('.nav-view'));
+    this.delegateEvents(extendWithSuper({}, base, device));
   },
 
   current_device: null,
@@ -61,13 +62,13 @@ var View = Backbone.View.extend({
   adaptive_events: {
 
     base: {
-      'click nav': function (e) {
+      'click a': function (e) {
         var target = e.originalEvent.target;
         var page = target.getAttribute('href') || target.getAttribute('data-href');
         if (page) {
           return simpleView(page);
         }
-        return false;
+        return true;
       },
 
       'submit form': function (e) {
@@ -83,15 +84,23 @@ var View = Backbone.View.extend({
       }
     },
 
-    mobile: {
+    small: {
+      'click a': function (e) {
+        this._super(e);
+        // Foundation has an issue open for toggling top-bar
+        $('.exit-off-canvas').trigger('click');
+      }
+    },
+
+    medium: {
 
     },
 
-    tablet: {
+    large: {
 
     },
 
-    desktop: {
+    xxlarge: {
 
     }
   },

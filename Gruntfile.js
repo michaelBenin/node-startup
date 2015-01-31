@@ -63,16 +63,17 @@ module.exports = function (grunt) {
     'jsbeautifier:verify',
     'browserify:test',
     'mochaTest',
+    'prod',
     'express:dev',
     'mocha',
-    'prod',
-    'webdriver:headless',
+    'webdriver:chrome',
     'express:dev:stop'
   ]);
 
   grunt.registerTask('acceptance', [
+    'env:jenkins',
     'express:dev',
-    'webdriver:headless',
+    'webdriver:chrome',
     'express:dev:stop'
   ]);
 };

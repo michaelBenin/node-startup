@@ -7,7 +7,8 @@ var exposify = require('exposify');
 
 // Add globals here
 exposify.config = {
-  Modernizr: 'modernizr'
+  modernizr: 'Modernizr',
+  foundation: 'Foundation'
 };
 
 module.exports = {
@@ -22,9 +23,10 @@ module.exports = {
           debug: true
         },
         transform: [
-          'hbsfy',
           'exposify',
-          'brfs'
+          'hbsfy',
+          'brfs',
+          'bulkify'
         ]
       }
     },
@@ -39,9 +41,10 @@ module.exports = {
         keepAlive: true,
         watch: true,
         transform: [
-          'hbsfy',
           'exposify',
-          'brfs'
+          'hbsfy',
+          'brfs',
+          'bulkify'
         ],
         postBundleCB: function (err, src, next) {
           var promiseScript = require('./utils/send_javascript');
@@ -79,9 +82,10 @@ module.exports = {
         keepAlive: true,
         watch: true,
         transform: [
-          'hbsfy',
           'exposify',
-          'brfs'
+          'hbsfy',
+          'brfs',
+          'bulkify'
         ],
         postBundleCB: function (err, src, next) {
           var promiseScript = require('./utils/send_test_javascript');

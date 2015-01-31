@@ -2,8 +2,8 @@
 // SEE http://webdriver.io/docs.html
 var expect = require('chai').expect;
 var config = require('../config');
-var noop = function () {};
 
+console.log('test');
 describe('Logged out tests.', function () {
 
   describe('Page testing', function () {
