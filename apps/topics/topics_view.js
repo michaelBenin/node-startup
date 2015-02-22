@@ -7,12 +7,10 @@ var stateManager = require('../../browser/js/services/state_manager');
 var template = require('./topics.hbs');
 var config = require('../../browser/js/config');
 var RepoModel = require('../../browser/js/models/repo_model');
+var domDiffMixin = require('../../browser/js/mixins/dom_diff_mixin');
 var Repo = new RepoModel();
+
 var View = Backbone.View.extend({
-
-  initialize: function () {
-
-  },
 
   off: function () {
     this.undelegateEvents(this.adaptive_events[this.current_device]);
@@ -24,7 +22,7 @@ var View = Backbone.View.extend({
     //TODO Conditional delegate events with enquire for phone, tablet, desktop
     this.current_device = stateManager.getDevice();
     this.setElement($('main.main'));
-    this.delegateEvents(_.extend(base, device));
+    this.delegateEvents(_.extend({}, base, device));
     return this;
   },
 
@@ -59,24 +57,45 @@ var View = Backbone.View.extend({
 
   render: function () {
     var self = this;
-    Repo.fetch().then(function (data) {
+
+    function fetchRepoSuccess(data) {
+
       var context = _.extend({}, config, data);
+      var renderedHTML = template(context);
+      var virtualDOM = self.makeVirtualDOM('main', 'main', renderedHTML);
+      var existingDOM = self.el;
+
       self
         .on()
         .$el
-        .empty()
-        .hide()
-        .append(template(context))
+        .hide();
+
+      self
+        .diff(virtualDOM, existingDOM)
+        .$el
         .fadeIn();
-    }).catch(function () {
+    }
+
+    function fetchRepoCatch() {
+
+      var renderedHTML = template(config);
+      var virtualDOM = self.makeVirtualDOM('main', 'main', renderedHTML);
+      var existingDOM = self.el;
+
       self
         .on()
         .$el
-        .empty()
-        .hide()
-        .append(template(config))
+        .hide();
+
+      self
+        .diff(virtualDOM, existingDOM)
+        .$el
         .fadeIn();
-    });
+    }
+
+    Repo.fetch()
+      .then(fetchRepoSuccess)
+      .catch(fetchRepoCatch);
 
     Backbone.history.navigate('topics');
   },
@@ -85,5 +104,10 @@ var View = Backbone.View.extend({
     return 'topics';
   }
 });
+
+// Add mixins here
+var mixins = _.extend({}, domDiffMixin);
+
+_.extend(View.prototype, mixins);
 
 module.exports = new View();
