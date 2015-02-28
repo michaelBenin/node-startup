@@ -59,21 +59,12 @@ var View = Backbone.View.extend({
     var self = this;
 
     function fetchRepoSuccess(data) {
-
+      self.on();
       var context = _.extend({}, config, data);
       var renderedHTML = template(context);
       var virtualDOM = self.makeVirtualDOM('main', 'main', renderedHTML);
       var existingDOM = self.el;
-
-      self
-        .on()
-        .$el
-        .hide();
-
-      self
-        .diff(virtualDOM, existingDOM)
-        .$el
-        .fadeIn();
+      self.diff(virtualDOM, existingDOM);
     }
 
     function fetchRepoCatch() {
@@ -83,7 +74,6 @@ var View = Backbone.View.extend({
       var existingDOM = self.el;
 
       self
-        .on()
         .$el
         .hide();
 
