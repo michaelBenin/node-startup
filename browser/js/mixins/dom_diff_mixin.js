@@ -16,7 +16,7 @@ function diff(virtualDOM, existingDOM) {
   var diffs = diffDOM.diff(existingDOM, virtualDOM);
 
   if (diffs.length > 0) {
-    diffDOM.apply(existingDOM, diff);
+    diffDOM.apply(existingDOM, diffs);
     return this;
   }
 
