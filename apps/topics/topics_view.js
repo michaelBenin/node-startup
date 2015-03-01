@@ -62,9 +62,7 @@ var View = Backbone.View.extend({
       self.on();
       var context = _.extend({}, config, data);
       var renderedHTML = template(context);
-      var virtualDOM = self.makeVirtualDOM('main', 'main', renderedHTML);
-      var existingDOM = self.el;
-      self.diff(virtualDOM, existingDOM);
+      self.diff(self.el, renderedHTML);
     }
 
     function fetchRepoCatch() {

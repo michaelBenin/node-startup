@@ -3,29 +3,36 @@
 var DiffDOM = require('diff-dom');
 var diffDOM = new DiffDOM();
 var _ = require('underscore');
+var $ = require('jquery');
 
-function makeVirtualDOM(tagName, className, renderedHTML) {
-  var virtualDOM = document.createElement(tagName);
-  virtualDOM.className = className;
+function makeVirtualDOM(el, renderedHTML) {
+  var virtualDOM = $.parseHTML(el.outerHTML)[0];
   virtualDOM.innerHTML = renderedHTML;
   return virtualDOM;
 }
 
-function diff(virtualDOM, existingDOM) {
+var debouncedMakeVirtualDOM = _.debounce(makeVirtualDOM, 17);
+
+function diff(el, renderedHTML) {
+
+  var virtualDOM = makeVirtualDOM(el, renderedHTML);
+
   /*jshint validthis:true */
-  var diffs = diffDOM.diff(existingDOM, virtualDOM);
+  var diffs = diffDOM.diff(el, virtualDOM);
 
   if (diffs.length > 0) {
-    diffDOM.apply(existingDOM, diffs);
+    diffDOM.apply(el, diffs);
     return this;
   }
 
   return this;
 }
 
+var debouncedDiff = _.debounce(diff, 17);
+
 module.exports = {
   makeVirtualDOM: makeVirtualDOM,
   diff: diff,
-  debouncedMakeVirtualDOM: _.debounce(makeVirtualDOM, 17),
-  debouncedDiffDom: _.debounce(diff, 17)
+  debouncedMakeVirtualDOM: debouncedMakeVirtualDOM,
+  debouncedDiffDom: debouncedDiff
 };
