@@ -6,7 +6,12 @@ var _ = require('underscore');
 var $ = require('jquery');
 
 function makeVirtualDOM(el, renderedHTML) {
-  var virtualDOM = $.parseHTML(el.outerHTML)[0];
+  var virtualDOM;
+  if (el.cloneNode) {
+    virtualDOM = el.cloneNode();
+  } else {
+    virtualDOM = $.parseHTML(el.outerHTML)[0];
+  }
   virtualDOM.innerHTML = renderedHTML;
   return virtualDOM;
 }
