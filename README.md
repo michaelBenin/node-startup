@@ -38,7 +38,7 @@
 ## Ruby Gems:
     $ gem install update --system
     $ gem install sass
-    $ gem install scss-lint
+    $ gem install scss-lint:0.18.0
     *note: sass is compiled with libsass
 
 

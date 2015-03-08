@@ -105,7 +105,6 @@
     "grunt-sass": "^0.18.0",
     "grunt-scss-lint": "0.3.4",
     "grunt-spritesmith": "^4.1.0",
-    "grunt-styleguide": "0.2.17",
     "grunt-webdriver": "^0.4.8",
     "hbsfy": "2.2.1",
     "husky": "^0.6.2",
