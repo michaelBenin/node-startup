@@ -21,7 +21,7 @@ var Handlebars = require('hbsfy/runtime');
 require('./util/helpers')(Handlebars);
 
 var router = require('./router/router');
-require('./controllers/router_handler')(router);
+require('./controllers');
 
 var stateManager = require('./services/state_manager');
 var config = require('./config/index');

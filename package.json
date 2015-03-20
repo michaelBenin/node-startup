@@ -76,6 +76,7 @@
   },
   "devDependencies": {
     "brfs": "^1.4.0",
+    "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
     "chai": "^2.1.0",
     "compass-mixins": "0.12.3",

@@ -1,12 +1,19 @@
 'use strict';
-var _ = require('underscore');
+
 var Backbone = require('backbone');
-var routes = _.extend({},
-  require('../../../shared/routes/router_config'),
-  require('./client_routes')
-);
-var router = Backbone.Router.extend({
-  routes: routes
+
+var Router = Backbone.Router.extend({
+  routes: {
+    '': 'index',
+    'about': 'about',
+    'links': 'links',
+    'topics': 'topics',
+    'users': 'users',
+    'log-in': 'log-in',
+    'sign-up': 'sign-up',
+    'search': 'search',
+    'search/:query': 'search-query'
+  }
 });
 
-module.exports = new router();
+module.exports = new Router();
