@@ -16,12 +16,16 @@ Backbone.LocalStorage = require('backbone.localstorage');
 require('../../shared/utils/util').backbone(Backbone);
 require('backbone-relational');
 require('backbone.epoxy');
+var bulk = require('bulk-require');
 
 var Handlebars = require('hbsfy/runtime');
 require('./util/helpers')(Handlebars);
 
-var router = require('./router/router');
-require('./controllers');
+var router = require('./services/router');
+
+bulk(__dirname, [
+  './routes/*.js'
+]);
 
 var stateManager = require('./services/state_manager');
 var config = require('./config/index');

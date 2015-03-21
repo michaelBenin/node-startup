@@ -16,4 +16,6 @@ var Router = Backbone.Router.extend({
   }
 });
 
-module.exports = new Router();
+var router = new Router();
+
+module.exports = router;
