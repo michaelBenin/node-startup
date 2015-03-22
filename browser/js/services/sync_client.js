@@ -5,11 +5,11 @@ var ajax = require('../util/ajax');
 var Promise = require('bluebird');
 var _ = require('lodash');
 
-Backbone.sync = function (method, model, options) {
+Backbone.sync = function(method, model, options) {
 
   var methodMap = {
 
-    create: function (model, options) {
+    create: function(model, options) {
 
       options = _.defaults(options, {
         type: 'POST',
@@ -22,7 +22,7 @@ Backbone.sync = function (method, model, options) {
       return ajax(url, options);
     },
 
-    update: function (model, options) {
+    update: function(model, options) {
 
       options = _.defaults(options, {
         type: 'PUT',
@@ -35,7 +35,7 @@ Backbone.sync = function (method, model, options) {
       return ajax(url, options);
     },
 
-    patch: function (model, options) {
+    patch: function(model, options) {
 
       options = _.defaults(options, {
         type: 'PUT',
@@ -48,7 +48,7 @@ Backbone.sync = function (method, model, options) {
       return ajax(url, options);
     },
 
-    delete: function (model, options) {
+    delete: function(model, options) {
 
       options = _.defaults(options, {
         type: 'DELETE',
@@ -63,7 +63,7 @@ Backbone.sync = function (method, model, options) {
       return ajax(url, options);
     },
 
-    read: function (model, options) {
+    read: function(model, options) {
 
       options = _.defaults(options, {
         type: 'GET'
@@ -75,7 +75,7 @@ Backbone.sync = function (method, model, options) {
     }
   };
 
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
 
     options = options || {};
 

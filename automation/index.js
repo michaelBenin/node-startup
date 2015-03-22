@@ -9,12 +9,12 @@ var files = fs.readdirSync(__dirname);
 [
   'utils',
   'index.js'
-].forEach(function (path) {
+].forEach(function(path) {
   var index = files.indexOf(path);
   files.splice(index, 1);
 });
 
-files.forEach(function (file) {
+files.forEach(function(file) {
   _.extend(config, require('./' + file.split('.')[0]));
 });
 

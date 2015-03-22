@@ -17,7 +17,7 @@ var subView = require('./home_sub_view');
 var LinksCollection = require('../../browser/js/models/links_collection');
 var View = Backbone.View.extend({
 
-  bootstrapData: function () {
+  bootstrapData: function() {
     this.setElement($('main.main'));
     var context = this.$el.find('section').attr('data-context');
     if (context) {
@@ -26,18 +26,18 @@ var View = Backbone.View.extend({
     }
   },
 
-  onCollections: function () {
+  onCollections: function() {
     var elements = this.$el.find('ul').children('li');
     this.subviews = collectionViewOn(subView, elements, this.collection);
   },
 
-  off: function () {
+  off: function() {
     collectionViewOff(this.subviews);
     this.subviews = undefined;
     this.undelegateEvents(this.adaptive_events[this.currentDevice]);
   },
 
-  on: function () {
+  on: function() {
     var base = this.adaptive_events.base;
     var device = this.adaptive_events[stateManager.getDevice()];
     //TODO Conditional delegate events with enquire for phone, tablet, desktop
@@ -52,35 +52,35 @@ var View = Backbone.View.extend({
   adaptive_events: {
 
     base: {
-      'click .home': function (e) {
+      'click .home': function(e) {
 
       }
     },
 
     mobile: {
-      'click .home': function (e) {
+      'click .home': function(e) {
         window.alert('mobile events bound home_logged_out view: ' + e.currentTarget);
       }
     },
 
     tablet: {
-      'click .home': function (e) {
+      'click .home': function(e) {
         window.alert('tablet events bound home_logged_out view: ' + e.currentTarget);
       }
     },
 
     desktop: {
-      'click .home': function (e) {
-        this.collection.fetch().then(function (data) {
+      'click .home': function(e) {
+        this.collection.fetch().then(function(data) {
           window.alert(data);
-        }).catch(function (error) {
+        }).catch(function(error) {
           window.alert(error);
         });
       }
     }
   },
 
-  render: function () {
+  render: function() {
     this.setElement($('main.main'));
 
     var model = {
@@ -111,7 +111,7 @@ var View = Backbone.View.extend({
     Backbone.history.navigate('');
   },
 
-  toString: function () {
+  toString: function() {
     return 'home';
   }
 });

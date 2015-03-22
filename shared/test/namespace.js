@@ -3,9 +3,9 @@
 var Backbone = require('backbone');
 var expect = require('chai').expect;
 
-module.exports = function (mocha) {
+module.exports = function(mocha) {
 
-  describe('Backbone namespace', function () {
+  describe('Backbone namespace', function() {
 
     // https://github.com/PaulUithol/Backbone-relational/issues/482
     /*
@@ -14,7 +14,7 @@ module.exports = function (mocha) {
     });
     */
 
-    it('Backbone model should have fullExtend', function () {
+    it('Backbone model should have fullExtend', function() {
       expect(typeof Backbone.Model.fullExtend).to.equal('function');
     });
 

@@ -7,9 +7,9 @@ require('../../../shared/utils/util').backbone(Backbone);
 
 require('../../../shared/test/namespace')(mocha);
 
-describe('test', function () {
+describe('test', function() {
 
-  it('test', function () {
+  it('test', function() {
     expect('equal').to.equal('equal');
   });
 });

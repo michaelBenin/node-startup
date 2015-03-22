@@ -10,12 +10,12 @@ module.exports = {
 
   watchId: null,
 
-  getCurrentPosition: function () {
+  getCurrentPosition: function() {
     // http://www.w3.org/TR/geolocation-API/#position-options
     if (this.support) {
-      return window.navigator.geolocation.getCurrentPosition(function (position) {
+      return window.navigator.geolocation.getCurrentPosition(function(position) {
         return position;
-      }, function (error) {
+      }, function(error) {
         return false;
         // error handling
       });
@@ -23,22 +23,22 @@ module.exports = {
     return false;
   },
 
-  watchPositioning: function () {
+  watchPositioning: function() {
     // http://www.w3.org/TR/geolocation-API/#position-options
     if (this.support) {
       var self = this;
-      this.watchId = window.navigator.geolocation.watchPosition(function (position) {
+      this.watchId = window.navigator.geolocation.watchPosition(function(position) {
           self.currentPosition = position;
           $(window).trigger('geolocation');
         },
-        function (error) {
+        function(error) {
 
         });
     }
     return false;
   },
 
-  stopWatchPositioning: function () {
+  stopWatchPositioning: function() {
     if (this.watchId) {
       window.navigator.geolocation.clearWatch(this.watchId);
     }

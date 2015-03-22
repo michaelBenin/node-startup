@@ -2,7 +2,7 @@
 
 module.exports = {
 
-  isOnline: function () {
+  isOnline: function() {
     return navigator.onLine;
   }
 

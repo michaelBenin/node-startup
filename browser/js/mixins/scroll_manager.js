@@ -7,8 +7,8 @@ var $html;
 
 module.exports = {
 
-  initScrollManager: function () {
-    $(function () {
+  initScrollManager: function() {
+    $(function() {
       $window = $('window');
       $html = $('html');
     });
@@ -17,7 +17,7 @@ module.exports = {
 
   isScrolling: false,
 
-  scrollTop: function (duration, offset) {
+  scrollTop: function(duration, offset) {
 
     if ($window.scrollTop() === 0) {
       return this;
@@ -39,28 +39,28 @@ module.exports = {
     return this;
   },
 
-  onScroll: function () {
+  onScroll: function() {
     var _this = this;
-    _.debounce(function () {
+    _.debounce(function() {
       _this.isScrolling = true;
       $window.trigger('scrollstart');
     }, 200, true);
   },
 
-  offScroll: function () {
+  offScroll: function() {
     var _this = this;
-    _.debounce(function () {
+    _.debounce(function() {
       _this.isScrolling = false;
       $window.trigger('scrollend');
     }, 200);
   },
 
-  watchScrolling: function () {
+  watchScrolling: function() {
     $window.on('scroll', this.onScroll);
     $window.on('scroll', this.offScroll);
   },
 
-  stopWatchScrolling: function () {
+  stopWatchScrolling: function() {
     $window.off('scroll', this.onScroll);
     $window.off('scroll', this.offScroll);
   }

@@ -1,7 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
   require('jit-grunt')(grunt, {
     express: 'grunt-express-server',
@@ -58,6 +58,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'env:jenkins',
     'scsslint',
+    'jscs',
     'jshint',
     'jsvalidate',
     'jsbeautifier:verify',

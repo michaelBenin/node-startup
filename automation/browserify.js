@@ -46,7 +46,7 @@ module.exports = {
           'brfs',
           'bulkify'
         ],
-        postBundleCB: function (err, src, next) {
+        postBundleCB: function(err, src, next) {
           var promiseScript = require('./utils/send_javascript');
           promiseScript.reset();
           var resolveBundle = promiseScript.resolveBundle;
@@ -87,7 +87,7 @@ module.exports = {
           'brfs',
           'bulkify'
         ],
-        postBundleCB: function (err, src, next) {
+        postBundleCB: function(err, src, next) {
           var promiseScript = require('./utils/send_test_javascript');
           promiseScript.reset();
           var resolveBundle = promiseScript.resolveBundle;

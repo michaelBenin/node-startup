@@ -41,15 +41,15 @@ var simpleView = function simpleview(view) {
 
 var View = Backbone.View.extend({
 
-  initialize: function () {
+  initialize: function() {
 
   },
 
-  off: function () {
+  off: function() {
     this.undelegateEvents(this.adaptive_events[this.current_device]);
   },
 
-  on: function () {
+  on: function() {
     var base = this.adaptive_events.base;
     var device = this.adaptive_events[stateManager.getDevice()];
     this.current_device = stateManager.getDevice();
@@ -62,7 +62,7 @@ var View = Backbone.View.extend({
   adaptive_events: {
 
     base: {
-      'click a': function (e) {
+      'click a': function(e) {
         var target = e.originalEvent.target;
         var page = target.getAttribute('href') || target.getAttribute('data-href');
         if (page) {
@@ -71,21 +71,21 @@ var View = Backbone.View.extend({
         return true;
       },
 
-      'submit form': function (e) {
+      'submit form': function(e) {
         window.alert('search submitted');
       },
 
-      'focus input': function (e) {
+      'focus input': function(e) {
         console.log('search focused');
       },
 
-      'change input': function (e) {
+      'change input': function(e) {
         console.log('search input changed');
       }
     },
 
     small: {
-      'click a': function (e) {
+      'click a': function(e) {
         this._super(e);
         // Foundation has an issue open for toggling top-bar
         $('.exit-off-canvas').trigger('click');
@@ -105,7 +105,7 @@ var View = Backbone.View.extend({
     }
   },
 
-  render: function () {
+  render: function() {
     this.$el
       .empty()
       .hide()
@@ -114,7 +114,7 @@ var View = Backbone.View.extend({
     this.on();
   },
 
-  toString: function () {
+  toString: function() {
     return 'nav';
   }
 });

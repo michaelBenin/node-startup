@@ -8,15 +8,15 @@ var stateManager = require('../../browser/js/services/state_manager');
 var config = require('../../browser/js/config');
 var SubView = Backbone.View.extend({
 
-  initialize: function () {
+  initialize: function() {
 
   },
 
-  off: function () {
+  off: function() {
     this.undelegateEvents(this.adaptive_events[this.current_device]);
   },
 
-  on: function () {
+  on: function() {
     var base = this.adaptive_events.base;
     var device = this.adaptive_events[stateManager.getDevice()];
     this.current_device = stateManager.getDevice();
@@ -28,31 +28,31 @@ var SubView = Backbone.View.extend({
   adaptive_events: {
 
     base: {
-      'click .link': function (e) {
+      'click .link': function(e) {
         alert('OMG! ' + this.model.attributes.title);
       }
     },
 
     mobile: {
-      'click a': function (e) {
+      'click a': function(e) {
         window.alert('mobile events bound home_logged_out view: ' + e.currentTarget);
       }
     },
 
     tablet: {
-      'click a': function (e) {
+      'click a': function(e) {
         window.alert('tablet events bound home_logged_out view: ' + e.currentTarget);
       }
     },
 
     desktop: {
-      'click a': function (e) {
+      'click a': function(e) {
 
       }
     }
   },
 
-  render: function () {
+  render: function() {
     var context = _.extend({},
       config,
       this.model.toJSON()
@@ -67,7 +67,7 @@ var SubView = Backbone.View.extend({
       .fadeIn();
   },
 
-  toString: function () {
+  toString: function() {
     return 'home subview';
   }
 });

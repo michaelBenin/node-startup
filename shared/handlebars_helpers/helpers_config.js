@@ -5,15 +5,15 @@ var pluralize = require('pluralize');
 var moment = require('moment');
 var _ = require('lodash');
 
-module.exports = function (Handlebars) {
+module.exports = function(Handlebars) {
   return {
-    'slugify': function (data) {
+    'slugify': function(data) {
       if (!data) {
         return 'Error: No arguments passed.';
       }
       return slugify(data);
     },
-    'pluralize': function (data) {
+    'pluralize': function(data) {
       if (!data) {
         return 'Error: No arguments passed.';
       }

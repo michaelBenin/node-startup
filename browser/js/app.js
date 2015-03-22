@@ -35,7 +35,7 @@ var websocket = require('./services/websocket');
 
 var pushState = stateManager.historyFix().pushStateSupport;
 
-$(function () {
+$(function() {
   $(document).foundation();
   Backbone.history.start({
     root: '/',

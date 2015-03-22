@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-  setupAnimation: function ($) {
+  setupAnimation: function($) {
     $.fn.animate = $.fn.velocity;
-    $.fn.fadeOut = function (duration, complete) {
+    $.fn.fadeOut = function(duration, complete) {
       $(this).velocity({
         opacity: 0,
         duration: duration,
@@ -13,7 +13,7 @@ module.exports = {
       });
       return $(this);
     };
-    $.fn.fadeIn = function (duration, complete) {
+    $.fn.fadeIn = function(duration, complete) {
       $(this).velocity({
         opacity: 1,
         duration: duration,

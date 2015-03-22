@@ -22,7 +22,7 @@ module.exports = {
         'evalCode': false,
         'indentCase': true,
         'unescapeStrings': false,
-        'spaceAfterAnonFunction': true
+        'spaceAfterAnonFunction': false
       },
       html: {
         fileTypes: ['.hbs'],

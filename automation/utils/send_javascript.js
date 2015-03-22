@@ -9,11 +9,11 @@ var promiseScript = Promise.defer();
 
 var setupScript = {
 
-  reset: function () {
+  reset: function() {
     promiseScript = Promise.defer();
   },
 
-  bundle: function () {
+  bundle: function() {
     return promiseScript.promise;
   },
 
@@ -26,11 +26,11 @@ var setupScript = {
   }
 };
 
-app.get('/js', function (req, res, next) {
-  setupScript.bundle().then(function (bundle) {
+app.get('/js', function(req, res, next) {
+  setupScript.bundle().then(function(bundle) {
     res.type('js');
     return res.send(bundle);
-  }).catch(function (error) {
+  }).catch(function(error) {
     console.log(error);
     res.send('alert("error in bundle ' + error.message + '");');
   });

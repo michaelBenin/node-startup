@@ -14,14 +14,14 @@ module.exports = {
           '--debug'
         ],
         env: {},
-        callback: function (nodemon) {
-          nodemon.on('log', function (event) {
+        callback: function(nodemon) {
+          nodemon.on('log', function(event) {
             console.log(event.colour);
           });
-          nodemon.on('config:update', function () {
+          nodemon.on('config:update', function() {
 
             if (!start) {
-              setTimeout(function () {
+              setTimeout(function() {
                 require('open')('http://127.0.0.1:8080/debug?port=5858');
               }, 1000);
               start = true;
@@ -29,10 +29,10 @@ module.exports = {
 
           });
           // refreshes browser when server reboots
-          nodemon.on('restart', function () {
+          nodemon.on('restart', function() {
             // Delay before server listens on port
             console.log('nodemon writing file');
-            setTimeout(function () {
+            setTimeout(function() {
               require('fs').writeFileSync('../.rebooted', 'rebooted: ' + new Date());
             }, 1000);
           });

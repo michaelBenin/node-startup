@@ -27,17 +27,17 @@ var stateManager = _.extend({},
       document.location.host +
       '/'),
 
-    initPageLoad: function () {
+    initPageLoad: function() {
       this.initialPageLoad = false;
       return this;
     },
 
-    addView: function (view) {
+    addView: function(view) {
       this.currentViews.push(view);
       return this;
     },
 
-    removeView: function (view) {
+    removeView: function(view) {
       var index = _.indexOf(this.currentViews, view);
       if (index !== -1) {
         this.currentViews.splice(index, 1);
@@ -45,9 +45,9 @@ var stateManager = _.extend({},
       return this;
     },
 
-    undelegateCurrentEvents: function () {
+    undelegateCurrentEvents: function() {
 
-      _.each(this.currentViews, function (view) {
+      _.each(this.currentViews, function(view) {
         view.off();
       });
 
@@ -56,16 +56,16 @@ var stateManager = _.extend({},
       return this;
     },
 
-    delegateCurrentEvents: function () {
+    delegateCurrentEvents: function() {
 
-      _.each(this.currentViews, function (view) {
+      _.each(this.currentViews, function(view) {
         view.on();
       });
 
       return this;
     },
 
-    manageSingleState: function (view) {
+    manageSingleState: function(view) {
 
       this.addView(view);
 
@@ -87,7 +87,7 @@ var stateManager = _.extend({},
 
     },
 
-    stateManage: function (viewEventList) {
+    stateManage: function(viewEventList) {
       var self = this;
 
       if (!this.initialPageLoad) {
@@ -96,12 +96,12 @@ var stateManager = _.extend({},
 
         var renderViews = _.difference(viewEventList, this.currentViews);
 
-        _.each(offViews, function (view) {
+        _.each(offViews, function(view) {
           view.off();
           self.removeView(view);
         });
 
-        _.each(renderViews, function (view) {
+        _.each(renderViews, function(view) {
           view.render();
           self.addView(view);
         });
@@ -110,7 +110,7 @@ var stateManager = _.extend({},
 
       }
 
-      _.each(viewEventList, function (view) {
+      _.each(viewEventList, function(view) {
 
         self.addView(view);
 
@@ -131,20 +131,20 @@ var stateManager = _.extend({},
 
     },
 
-    resetState: function () {
-      _.each(this.currentViews, function (view) {
+    resetState: function() {
+      _.each(this.currentViews, function(view) {
         view.off();
         view.on();
       });
     },
 
-    windowHandler: function () {
+    windowHandler: function() {
       var self = this;
-      var device_cache = this.getDevice();
-      var debounced = _.debounce(function () {
+      var deviceCache = this.getDevice();
+      var debounced = _.debounce(function() {
         self.initDevice();
-        if (device_cache !== self.getDevice()) {
-          device_cache = self.getDevice();
+        if (deviceCache !== self.getDevice()) {
+          deviceCache = self.getDevice();
           self.resetState();
         }
       }, 300);
@@ -152,37 +152,37 @@ var stateManager = _.extend({},
       return this;
     },
 
-    anchorHandler: function () {
-      $(document).on('click', 'a:not([data-bypass])', function (event) {
+    anchorHandler: function() {
+      $(document).on('click', 'a:not([data-bypass])', function(event) {
         event.preventDefault();
       });
       return this;
     },
 
-    formHandler: function () {
-      $(document).on('submit', 'form:not([data-bypass])', function (event) {
+    formHandler: function() {
+      $(document).on('submit', 'form:not([data-bypass])', function(event) {
         event.preventDefault();
       });
       return this;
     },
 
-    historyFix: function () {
+    historyFix: function() {
       var location = document.location.toString();
       if (!this.pushStateSupport && /#/.test(location) === false) {
         document.location = this.rootURL + '#' + this.url[1];
-        setTimeout(function () {
+        setTimeout(function() {
           document.location.reload();
         }, 100);
       }
       if (this.pushStateSupport && /#/.test(location) === true) {
         document.location = this.rootURL + this.url[1];
-        setTimeout(function () {
+        setTimeout(function() {
           document.location.reload();
         }, 100);
       }
       // Todo separate out into analytics utils/services
       var ga = window.ga;
-      ga = ga || function () {
+      ga = ga || function() {
         (ga.q = ga.q || []).push(arguments);
       };
       ga.l = new Date();
@@ -196,15 +196,15 @@ var stateManager = _.extend({},
       return this;
     },
 
-    unload: function (msg) {
-      $(window).on('beforeunload', function () {
+    unload: function(msg) {
+      $(window).on('beforeunload', function() {
         return msg;
       });
     },
 
-    initOnLoad: function () {
+    initOnLoad: function() {
       var self = this;
-      $(function () {
+      $(function() {
         var $config = $('#config');
         _.extend(config, $.parseJSON($config.html()));
         $config.remove();
@@ -216,7 +216,7 @@ var stateManager = _.extend({},
       });
     },
 
-    init: function () {
+    init: function() {
       this.initDevice()
         .anchorHandler()
         .formHandler()

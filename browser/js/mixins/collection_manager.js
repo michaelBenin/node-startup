@@ -5,9 +5,9 @@ var $ = require('jquery');
 
 module.exports = {
 
-  collectionViewOn: function (Childview, elements, collection) {
+  collectionViewOn: function(Childview, elements, collection) {
     var views = [];
-    _.each(elements, function (el, index) {
+    _.each(elements, function(el, index) {
       var childview = new Childview({
         'model': collection.at(index)
       });
@@ -18,9 +18,9 @@ module.exports = {
     return views;
   },
 
-  collectionViewOff: function (views) {
+  collectionViewOff: function(views) {
 
-    _.each(views, function (view) {
+    _.each(views, function(view) {
       view.off();
     });
 

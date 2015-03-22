@@ -9,15 +9,15 @@ var config = require('../../browser/js/config');
 
 var View = Backbone.View.extend({
 
-  initialize: function () {
+  initialize: function() {
 
   },
 
-  off: function () {
+  off: function() {
     this.undelegateEvents(this.adaptive_events[this.current_device]);
   },
 
-  on: function () {
+  on: function() {
     var base = this.adaptive_events.base;
     var device = this.adaptive_events[stateManager.getDevice()];
     this.current_device = stateManager.getDevice();
@@ -34,29 +34,29 @@ var View = Backbone.View.extend({
     },
 
     mobile: {
-      'click footer': function (e) {
+      'click footer': function(e) {
         window.alert('mobile events bound home_logged_out view: ' + e.currentTarget);
       }
     },
 
     tablet: {
-      'click footer': function (e) {
+      'click footer': function(e) {
         window.alert('mobile events bound home_logged_out view: ' + e.currentTarget);
       }
     },
 
     desktop: {
-      'click footer': function (e) {
+      'click footer': function(e) {
         window.alert('mobile events bound home_logged_out view: ' + e.currentTarget);
       }
     }
   },
 
-  render: function () {
+  render: function() {
 
   },
 
-  toString: function () {
+  toString: function() {
     return 'footer';
   }
 });

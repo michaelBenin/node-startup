@@ -9,15 +9,15 @@ var config = require('../../browser/js/config');
 
 var View = Backbone.View.extend({
 
-  initialize: function () {
+  initialize: function() {
 
   },
 
-  off: function () {
+  off: function() {
     this.undelegateEvents(this.adaptive_events[this.current_device]);
   },
 
-  on: function () {
+  on: function() {
     var base = this.adaptive_events.base;
     var device = this.adaptive_events[stateManager.getDevice()];
     //TODO Conditional delegate events with enquire for phone, tablet, desktop
@@ -32,31 +32,31 @@ var View = Backbone.View.extend({
   adaptive_events: {
 
     base: {
-      'click .home': function (e) {
+      'click .home': function(e) {
         window.alert('mobile events bound home_logged_out view: ' + e.currentTarget);
       }
     },
 
     mobile: {
-      'click .home': function (e) {
+      'click .home': function(e) {
         window.alert('mobile events bound home_logged_out view: ' + e.currentTarget);
       }
     },
 
     tablet: {
-      'click .home': function (e) {
+      'click .home': function(e) {
         window.alert('tablet events bound home_logged_out view: ' + e.currentTarget);
       }
     },
 
     desktop: {
-      'click .home': function (e) {
+      'click .home': function(e) {
 
       }
     }
   },
 
-  render: function () {
+  render: function() {
     this
       .on()
       .$el
@@ -68,7 +68,7 @@ var View = Backbone.View.extend({
     Backbone.history.navigate('links');
   },
 
-  toString: function () {
+  toString: function() {
     return 'links';
   }
 });

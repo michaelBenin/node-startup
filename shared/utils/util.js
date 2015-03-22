@@ -2,10 +2,10 @@
 var _ = require('lodash');
 // https://coderwall.com/p/xj81ua
 module.exports = {
-  extendableBackboneDataTypes: function (types) {
-    _.each(types, function (DataType) {
+  extendableBackboneDataTypes: function(types) {
+    _.each(types, function(DataType) {
       // Additional extension layer for DataTypes
-      DataType.fullExtend = function (protoProps, staticProps) {
+      DataType.fullExtend = function(protoProps, staticProps) {
         // Call default extend method
         var extended = DataType.extend.call(this, protoProps, staticProps);
         // Add a usable super method for better inheritance
@@ -24,7 +24,7 @@ module.exports = {
       };
     });
   },
-  backbone: function (Backbone) {
+  backbone: function(Backbone) {
     this.extendableBackboneDataTypes([
       Backbone.Model,
       Backbone.Collection,
