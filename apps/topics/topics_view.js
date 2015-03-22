@@ -2,7 +2,7 @@
 
 var Backbone = require('backbone');
 var $ = require('jquery');
-var _ = require('underscore');
+var _ = require('lodash');
 var stateManager = require('../../browser/js/services/state_manager');
 var template = require('./topics.hbs');
 var config = require('../../browser/js/config');
@@ -59,10 +59,10 @@ var View = Backbone.View.extend({
     var self = this;
 
     function fetchRepoSuccess(data) {
-      self.on();
       var context = _.extend({}, config, data);
       var renderedHTML = template(context);
       self.diff(self.el, renderedHTML);
+      self.on();
     }
 
     function fetchRepoCatch() {

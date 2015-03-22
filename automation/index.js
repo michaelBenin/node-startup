@@ -1,7 +1,7 @@
 'use strict';
 
 var fs = require('fs');
-var _ = require('underscore');
+var _ = require('lodash');
 
 var config = {};
 var files = fs.readdirSync(__dirname);

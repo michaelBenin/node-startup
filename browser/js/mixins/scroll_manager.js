@@ -1,6 +1,6 @@
 'use strict';
 
-var _ = require('underscore');
+var _ = require('lodash');
 var $ = require('jquery');
 var $window;
 var $html;
@@ -18,6 +18,11 @@ module.exports = {
   isScrolling: false,
 
   scrollTop: function (duration, offset) {
+
+    if ($window.scrollTop() === 0) {
+      return this;
+    }
+
     if (!duration) {
       duration = 450;
     }

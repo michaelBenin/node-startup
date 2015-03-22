@@ -3,7 +3,7 @@
 var Backbone = require('backbone');
 var ajax = require('../util/ajax');
 var Promise = require('bluebird');
-var _ = require('underscore');
+var _ = require('lodash');
 
 Backbone.sync = function (method, model, options) {
 

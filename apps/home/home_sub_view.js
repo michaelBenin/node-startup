@@ -2,7 +2,7 @@
 
 var Backbone = require('backbone');
 var $ = require('jquery');
-var _ = require('underscore');
+var _ = require('lodash');
 var template = require('./home_sub.hbs');
 var stateManager = require('../../browser/js/services/state_manager');
 var config = require('../../browser/js/config');

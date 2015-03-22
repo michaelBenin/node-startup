@@ -2,7 +2,7 @@
 
 var Backbone = require('backbone');
 var $ = require('jquery');
-var _ = require('underscore');
+var _ = require('lodash');
 var stateManager = require('../../browser/js/services/state_manager');
 var template = require('./footer.hbs');
 var config = require('../../browser/js/config');
@@ -22,7 +22,7 @@ var View = Backbone.View.extend({
     var device = this.adaptive_events[stateManager.getDevice()];
     this.current_device = stateManager.getDevice();
     this.setElement($('section.footer'));
-    this.delegateEvents(_.extend(base, device));
+    this.delegateEvents(_.extend({}, base, device));
   },
 
   current_device: null,

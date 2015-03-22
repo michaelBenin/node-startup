@@ -2,7 +2,7 @@
 
 var Backbone = require('backbone');
 var $ = require('jquery');
-var _ = require('underscore');
+var _ = require('lodash');
 var foundation = require('foundation');
 var extendWithSuper = require('extend-with-super');
 var stateManager = require('../../browser/js/services/state_manager');

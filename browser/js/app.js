@@ -5,7 +5,7 @@ require('./../../browser_modules/foundation/js/foundation');
 require('velocity-animate');
 require('./util/animation').setupAnimation($);
 
-var _ = require('underscore');
+var _ = require('lodash');
 
 var Backbone = require('backbone');
 Backbone.$ = $;
@@ -15,7 +15,6 @@ require('backbone.touch');
 Backbone.LocalStorage = require('backbone.localstorage');
 require('../../shared/utils/util').backbone(Backbone);
 require('backbone-relational');
-require('backbone.epoxy');
 var bulk = require('bulk-require');
 
 var Handlebars = require('hbsfy/runtime');
@@ -28,10 +27,11 @@ bulk(__dirname, [
 ]);
 
 var stateManager = require('./services/state_manager');
-var config = require('./config/index');
-var websocket = require('./services/websocket');
 
 stateManager.init();
+
+var config = require('./config/index');
+var websocket = require('./services/websocket');
 
 var pushState = stateManager.historyFix().pushStateSupport;
 

@@ -1,21 +1,56 @@
-<section class="login">
-    <form class="login" method="post" action="/api/login">
-        
-        <label for="username">Username</label><input name="username" class="username" type="text"/>
+<div class="wrapper">
+  <div class="row pad-btm">
+    <div class="column large-12">
+      <h1 class="ptitle left">Join - Create Account</h1>
+      <!-- end .columns.large-12 -->
+    </div>
+    <!-- end .row -->
+    <div class="row pad-btm">
+      <div class="columns large-12">
+        <h1>Get an Account</h1>
 
-        <label for="email">email</label><input name="email" class="email" type="text"/>
+        <div class="columns large-6">
+          <p>Create an account to take advantage of the features and benefits that make using our website faster and
+            easier:</p>
+          <ul class="circle">
+            <li>Save items to your wish list</li>
+            <li>Order tracking and order history</li>
+            <li>Save your account information</li>
+            <li>Receive email updates and offers</li>
+          </ul>
+        </div>
 
-        <label for="verifypassword">password</label><input name="verifypassword" class="password" type="text"/>
-        <label for="password">password</label><input name="verifypassword" class="password" type="text"/>
+        <div class="columns large-6">
+          <h5 class="alt"><span>Create a New Account</span></h5>
 
-        <input type="submit" value="Submit" />
-    </form>
-</section>
+          <form name="catseczoneform52147" method="post"
+                action="/ZoneProcess.aspx?ZoneID=51&amp;Referrer=http%3a%2f%2fuguru-foundation5-us.businesscatalyst.com&amp;OID=14301795&amp;OTYPE=1">
+            <div class="form">
+              <div class="item">
+                <input class="cat_textbox_small" type="text" name="Username" id="SZUsername" placeholder="Username"
+                       maxlength="255"/>
+              </div>
+              <div class="item">
+                <input class="cat_textbox_small" type="password" name="Password" id="SZPassword" placeholder="Password"
+                       maxlength="255" autocomplete="off"/>
+              </div>
+              <div class="item">
+                <label for="RememberMe"><input type="checkbox" name="RememberMe" id="RememberMe"/> Remember Me</label>
+              </div>
+              <div class="item">
+                <input class="button radius" type="submit" value="Log in"/>&nbsp;<a
+              href="/_System/SystemPages/PasswordRetrieveRequest">Lost password?</a>
+              </div>
+            </div>
+          </form>
 
-<!--
 
-div.container>ul.nav.nav-tabs>li*5>a{Link $}
+        </div>
 
-div>button.btn{Button}*3
 
--->
+      </div>
+      <!-- end .columns.large-12 -->
+    </div>
+    <!-- end .row  -->
+  </div>
+</div>

@@ -1,5 +1,5 @@
 'use strict';
-var _ = require('underscore');
+var _ = require('lodash');
 // https://coderwall.com/p/xj81ua
 module.exports = {
   extendableBackboneDataTypes: function (types) {
@@ -24,15 +24,11 @@ module.exports = {
       };
     });
   },
-  backboneValidations: function (Backbone) {
-    _.extend(Backbone.Model.prototype, require('backbone-validation').mixin);
-  },
   backbone: function (Backbone) {
     this.extendableBackboneDataTypes([
       Backbone.Model,
       Backbone.Collection,
       Backbone.View
     ]);
-    this.backboneValidations(Backbone);
   }
 };

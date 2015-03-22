@@ -3,7 +3,7 @@
 var slugify = require('cozy-slug');
 var pluralize = require('pluralize');
 var moment = require('moment');
-var _ = require('underscore');
+var _ = require('lodash');
 
 module.exports = function (Handlebars) {
   return {

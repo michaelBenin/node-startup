@@ -2,7 +2,7 @@
 
 var DiffDOM = require('diff-dom');
 var diffDOM = new DiffDOM();
-var _ = require('underscore');
+var _ = require('lodash');
 var $ = require('jquery');
 
 function makeVirtualDOM(el, renderedHTML) {

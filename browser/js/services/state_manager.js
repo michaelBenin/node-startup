@@ -2,10 +2,11 @@
 
 var $ = require('jquery');
 var Backbone = require('backbone');
-var _ = require('underscore');
+var _ = require('lodash');
 var deviceManager = require('./../mixins/device_manager');
 var scrollManager = require('./../mixins/scroll_manager');
 var collectionManager = require('./../mixins/collection_manager');
+var config = require('../config');
 
 var stateManager = _.extend({},
   Backbone.Events,
@@ -205,7 +206,7 @@ var stateManager = _.extend({},
       var self = this;
       $(function () {
         var $config = $('#config');
-        var config = _.extend({}, config, $.parseJSON($config.html()));
+        _.extend(config, $.parseJSON($config.html()));
         $config.remove();
         self.config = config;
         // Force rendering instead of event binding
