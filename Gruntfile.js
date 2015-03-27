@@ -67,7 +67,6 @@ module.exports = function(grunt) {
     'prod',
     'express:dev',
     'mocha',
-    'webdriver:chrome',
     'express:dev:stop'
   ]);
 
