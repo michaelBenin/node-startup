@@ -1,0 +1,24 @@
+{
+  "apps": [
+    {
+      "name": "node_startup8000",
+      "cwd": ".",
+      "script": "index.js",
+      "watch": false,
+      "max_memory_restart" : "450M",
+      "merge_logs": true,
+      "log_file"   : "logs/pm2_child.log",
+      "error_file" : "logs/pm2_error.log",
+      "out_file"   : "logs/pm2_child_out.log",
+      "exec_interpreter": "node",
+      "exec_mode": "cluster_mode",
+      "instances": "0",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "env_development": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
