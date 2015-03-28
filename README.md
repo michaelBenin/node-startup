@@ -51,13 +51,13 @@ See:https://github.com/node-inspector/node-inspector/issues/412
     # Replace with this github url, the main project is private on bb
     $ git clone git@bitbucket.org:michaelbenin/node-startup.git && cd node-startup && npm i && npm run-script dev
 
-## When updating package.json
+## To run tests on ubuntu 14:
 
-    $ npm run-script yaml2json
+    apt-get install libfontconfig1
 
 ## Full Stack Development mode:
 
-    $ npm run-script dev
+    $ npm run dev
 
 ## Full stack test:
 
