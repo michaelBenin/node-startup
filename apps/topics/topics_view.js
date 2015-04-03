@@ -56,6 +56,7 @@ var View = Backbone.View.extend({
   },
 
   render: function() {
+    this.setElement($('main.main'));
     var self = this;
 
     function fetchRepoSuccess(data) {
