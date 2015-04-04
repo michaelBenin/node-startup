@@ -1,5 +1,4 @@
 'use strict';
-
 var $ = window.$ = window.jQuery = require('jquery');
 require('./../../browser_modules/foundation/js/foundation');
 require('velocity-animate');

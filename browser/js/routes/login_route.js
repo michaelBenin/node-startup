@@ -3,4 +3,4 @@
 var router = require('../services/router');
 var loginController = require('../controllers/login_controller');
 
-router.on('route:login', loginController);
+router.on('route:log-in', loginController);

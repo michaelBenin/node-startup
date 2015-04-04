@@ -1,10 +1,5 @@
 @charset 'UTF-8';
 
-// Compass mixins
-@import '../../node_modules/compass-mixins/lib/compass/support';
-@import '../../node_modules/compass-mixins/lib/compass/utilities';
-@import '../../node_modules/compass-mixins/lib/compass/css3';
-
 // Foundation Framework
 @import '../../browser_modules/foundation/scss/normalize';
 @import 'framework/foundation/settings';
