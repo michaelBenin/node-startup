@@ -80,7 +80,6 @@
     "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
     "chai": "^2.1.0",
-    "compass-mixins": "0.12.3",
     "exposify": "^0.3.0",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.5.0",
