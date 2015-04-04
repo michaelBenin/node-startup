@@ -19,6 +19,15 @@ module.exports = {
       src: ['browser/js/app.js'],
       dest: 'built/static/js/node-startup.js',
       options: {
+        /*   preBundleCB: function(bundle) {
+             bundle.transform('aliasify', {
+               aliases: {
+                 'lodash': 'underscore'
+               },
+               global: true
+             });
+           },
+           */
         browserifyOptions: {
           debug: true
         },
@@ -35,6 +44,16 @@ module.exports = {
       src: ['browser/js/app.js'],
       dest: 'built/static/js/node-startup.js',
       options: {
+        /*
+        preBundleCB: function(bundle) {
+          bundle.transform('aliasify', {
+            aliases: {
+              'lodash': 'underscore'
+            },
+            global: true
+          });
+        },
+        */
         browserifyOptions: {
           debug: true
         },
@@ -76,6 +95,16 @@ module.exports = {
       ],
       dest: 'built/test/test-node-startup.js',
       options: {
+        /*
+        preBundleCB: function(bundle) {
+          bundle.transform('aliasify', {
+            aliases: {
+              'lodash': 'underscore'
+            },
+            global: true
+          });
+        },
+        */
         browserifyOptions: {
           debug: true
         },
