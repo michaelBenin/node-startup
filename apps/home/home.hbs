@@ -1,27 +1,32 @@
 <section {{data-context this}} class="row home">
-    <article class="row span7">
-        <h1>
-           Title: {{slugify title}}
-        </h1>
-        <p>
-           Content: {{pluralize content}}
-        </p>
-    </article>
-    <section class="row span5">
-        <h1>
-            Title: {{slugify title}}
-        </h1>
-        <p>
-            Content: {{pluralize content}}
-        </p>
-        <p>
-            "I need content."
-        </p>
-        <ul class="subview">
-          {{#each list}}
-              {{>home_sub}}
-          {{/each}}
-        </ul>
-    </section>
+  <article class="row span7">
+    <h1>
+      Title: {{slugify title}}
+    </h1>
+
+    <p>
+      Content: {{pluralize content}}
+    </p>
+  </article>
+  <section class="row span5">
+    <h1>
+      Title: {{slugify title}}
+    </h1>
+
+    <p>
+      Content: {{pluralize content}}
+    </p>
+
+    <p>
+      "I need content."
+    </p>
+    <ul class="subview">
+        {{#each list}}
+            {{>home_sub}}
+        {{/each}}
+    </ul>
+  </section>
 </section>
-<iframe width="560" height="315" src="//www.youtube.com/embed/RixX7263IIM" frameborder="0" allowfullscreen></iframe>
+<div class="flex-video">
+  <iframe width="560" height="315" src="//www.youtube.com/embed/lM9RziXxacE" frameborder="0" allowfullscreen></iframe>
+</div>
