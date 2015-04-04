@@ -60,9 +60,10 @@ var View = Backbone.View.extend({
   render: function() {
     this.setElement($('main.main'));
     var self = this;
-    this.$el.prepend(spinner.el);
-    /*
+    $('body').prepend(spinner.el);
+
     function fetchRepoSuccess(data) {
+      spinner.stop();
       var context = _.extend({}, config, data);
       var renderedHTML = template(context);
       self.diff(self.el, renderedHTML);
@@ -70,7 +71,7 @@ var View = Backbone.View.extend({
     }
 
     function fetchRepoCatch() {
-
+      spinner.stop();
       var renderedHTML = template(config);
       var virtualDOM = self.makeVirtualDOM('main', 'main', renderedHTML);
       var existingDOM = self.el;
@@ -88,7 +89,6 @@ var View = Backbone.View.extend({
     Repo.fetch()
       .then(fetchRepoSuccess)
       .catch(fetchRepoCatch);
-      */
 
     Backbone.history.navigate('topics');
   },
