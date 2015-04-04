@@ -39,15 +39,15 @@ module.exports = {
         },
         cwd: __dirname,
         ignore: [
-          'apps/**/*.js',
-          'node_modules/**'
+          '../apps/**/*.js',
+          '../node_modules/**'
         ],
         ext: 'js,hbs',
         watch: [
-          '../apps',
+          '../apps/**/*.hbs',
           '../lib'
         ],
-        delay: 1
+        delay: 3
       }
     },
     exec: {

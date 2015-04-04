@@ -8,6 +8,8 @@ var template = require('./topics.hbs');
 var config = require('../../browser/js/config');
 var RepoModel = require('../../browser/js/models/repo_model');
 var domDiffMixin = require('../../browser/js/mixins/dom_diff_mixin');
+var spinner = require('../../browser/js/util/spin_util');
+
 var Repo = new RepoModel();
 
 var View = Backbone.View.extend({
@@ -58,7 +60,8 @@ var View = Backbone.View.extend({
   render: function() {
     this.setElement($('main.main'));
     var self = this;
-
+    this.$el.prepend(spinner.el);
+    /*
     function fetchRepoSuccess(data) {
       var context = _.extend({}, config, data);
       var renderedHTML = template(context);
@@ -85,6 +88,7 @@ var View = Backbone.View.extend({
     Repo.fetch()
       .then(fetchRepoSuccess)
       .catch(fetchRepoCatch);
+      */
 
     Backbone.history.navigate('topics');
   },
