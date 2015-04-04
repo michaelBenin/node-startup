@@ -71,6 +71,7 @@
     "nconf": "0.7.1",
     "pluralize": "^1.1.2",
     "scriptjs": "2.5.7",
+    "spin": "0.0.1",
     "underscore": "^1.8.2",
     "urlencode": "0.2.0",
     "velocity-animate": "^1.2.2"
