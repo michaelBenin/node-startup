@@ -35,7 +35,7 @@
     "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/grunt copy browserify:modern sass",
     "pretest": "",
     "test": "./node_modules/.bin/grunt test",
-    "prestart": "./node_modules/.bin/grunt prod",
+    "build-prod": "./node_modules/.bin/grunt prod",
     "start": "NODE_ENV=staging node index",
     "prod": "pm2 startOrRestart pm2/production.json",
     "precommit": "npm test",
