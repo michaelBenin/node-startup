@@ -70,6 +70,7 @@
     "moment": "^2.9.0",
     "nconf": "0.7.1",
     "pluralize": "^1.1.2",
+    "request": "^2.53.0",
     "scriptjs": "2.5.7",
     "spin": "0.0.1",
     "underscore": "^1.8.2",
@@ -117,7 +118,6 @@
     "jshint-stylish": "^1.0.1",
     "mocha": "^2.1.0",
     "open": "0.0.5",
-    "request": "^2.53.0",
     "require-all": "1.0.0",
     "sinon": "^1.14.1",
     "time-grunt": "^1.1.0" 
