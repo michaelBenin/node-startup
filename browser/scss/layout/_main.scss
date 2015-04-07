@@ -1,3 +1,4 @@
 .main {
   @include grid-row();
+  min-height: 1000px;
 }

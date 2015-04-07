@@ -101,8 +101,9 @@ var View = Backbone.View.extend({
     this
       .on()
       .$el
-      .empty()
+      .stop()
       .hide()
+      .empty()
       .append(template(context))
       .fadeIn();
 

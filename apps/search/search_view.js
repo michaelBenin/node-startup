@@ -59,6 +59,8 @@ var View = Backbone.View.extend({
     this.on();
     this
       .$el
+      .stop()
+      .hide()
       .empty()
       .append(template(config));
 

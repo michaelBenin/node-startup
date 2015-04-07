@@ -78,6 +78,7 @@ var View = Backbone.View.extend({
 
       self
         .$el
+        .stop()
         .hide();
 
       self
