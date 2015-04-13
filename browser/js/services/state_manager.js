@@ -204,16 +204,14 @@ var stateManager = _.extend({},
 
     initOnLoad: function() {
       var self = this;
-      $(function() {
-        var $config = $('#config');
-        _.extend(config, $.parseJSON($config.html()));
-        $config.remove();
-        self.config = config;
-        // Force rendering instead of event binding
-        if (self.config.MOBILE_APP) {
-          this.initPageLoad();
-        }
-      });
+      var $config = $('#config');
+      _.extend(config, $.parseJSON($config.html()));
+      $config.remove();
+      self.config = config;
+      // Force rendering instead of event binding
+      if (self.config.MOBILE_APP) {
+        this.initPageLoad();
+      }
     },
 
     init: function() {
