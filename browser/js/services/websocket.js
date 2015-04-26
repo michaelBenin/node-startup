@@ -1,7 +1,7 @@
 'use strict';
 
 var config = require('../config');
-var socket = require('engine.io-client')(config.WEBSOCKET);
+var socket = require('engine.io-client')(config.websocket);
 
 socket.on('open', function() {
   //console.log('Client socket opened.');
