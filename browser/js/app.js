@@ -11,7 +11,6 @@ var Backbone = require('backbone');
 Backbone.$ = $;
 Backbone._ = _;
 require('./services/sync_client');
-require('backbone.touch');
 Backbone.LocalStorage = require('backbone.localstorage');
 require('../../shared/utils/util').backbone(Backbone);
 require('backbone-relational');
