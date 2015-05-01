@@ -17,7 +17,7 @@ var stateManager = _.extend({},
   deviceManager, {
     currentViews: [],
     initialPageLoad: true,
-    pushStateSupport: (window.history && window.history.pushState),
+    pushStateSupport: !!(window.history && window.history.pushState),
     rootURL: window.location.protocol +
       '//' +
       document.location.host +
