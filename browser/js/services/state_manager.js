@@ -3,6 +3,7 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
 var _ = require('lodash');
+var analyticsMixin = require('./../mixins/analytics_mixin');
 var deviceManager = require('./../mixins/device_manager');
 var scrollManager = require('./../mixins/scroll_manager');
 var collectionManager = require('./../mixins/collection_manager');
@@ -12,17 +13,17 @@ var stateManager = _.extend({},
   Backbone.Events,
   scrollManager,
   collectionManager,
+  analyticsMixin,
   deviceManager, {
-    'currentViews': [],
-    'initialPageLoad': true,
-    'pushStateSupport': (window.history && window.history.pushState),
-
-    'rootURL': window.location.protocol +
+    currentViews: [],
+    initialPageLoad: true,
+    pushStateSupport: (window.history && window.history.pushState),
+    rootURL: window.location.protocol +
       '//' +
       document.location.host +
       '/',
 
-    'url': document.location.toString().split(window.location.protocol +
+    url: document.location.toString().split(window.location.protocol +
       '//' +
       document.location.host +
       '/'),
@@ -180,19 +181,7 @@ var stateManager = _.extend({},
           document.location.reload();
         }, 100);
       }
-      // Todo separate out into analytics utils/services
-      var ga = window.ga;
-      ga = ga || function() {
-        (ga.q = ga.q || []).push(arguments);
-      };
-      ga.l = new Date();
-      ga(
-        'send',
-        'event',
-        'STATE_MANAGER',
-        'HTML5_HISTORY_SUPPORT',
-        this.pushStateSupport
-      );
+
       return this;
     },
 
@@ -209,9 +198,10 @@ var stateManager = _.extend({},
       $config.remove();
       self.config = config;
       // Force rendering instead of event binding
-      if (self.config.MOBILE_APP) {
+      if (self.config.mobileApp) {
         this.initPageLoad();
       }
+      return this;
     },
 
     init: function() {
@@ -221,7 +211,8 @@ var stateManager = _.extend({},
         .historyFix()
         .windowHandler()
         .initScrollManager()
-        .initOnLoad();
+        .initOnLoad()
+        .initializeAnalytics();
     }
 
   });
